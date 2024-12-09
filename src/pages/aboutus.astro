@@ -1,0 +1,14 @@
+---
+import "../styles/style.css";
+import Layout from "../layouts/Layout.astro";
+const showOfferBar = true;
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Om Os">
+  <h2>About us</h2>
+  <Card header="Sild" />
+  <Card header="Laks" soldOut={true}/>
+  <Card header="Blæksprutte" />
+</Layout>
+

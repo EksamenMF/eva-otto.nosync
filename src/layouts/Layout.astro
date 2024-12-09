@@ -1,6 +1,7 @@
 ---
 import Card from "../components/Card.astro";
 import Navigation from "../components/Navigation.astro";
+const {title} = Astro.props
 ---
 
 <!doctype html>
@@ -10,12 +11,12 @@ import Navigation from "../components/Navigation.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
   </head>
   <body>
     <Navigation />
+		<h1>{title}</h1>
     <main>
-      <Card />
       <slot />
     </main>
   </body>

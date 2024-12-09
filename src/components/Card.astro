@@ -3,18 +3,22 @@
 const text = Astro.props.text;
  */
 
-const {header, text, test} = Astro.props;
+const {header, soldOut} = Astro.props;
 ---
 
-<article>
+<article class="card">
   <h2>{header}</h2>
+  {soldOut && <p>UDSOLGT!</p>} 
   <p>kortere lorem</p>
   <slot />
 </article>
 
 <style>
 p {
-  color: hotpink;
+  color: black;
+}
+.card {
+  background-color: azure;
 }
 </style>
 

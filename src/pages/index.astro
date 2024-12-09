@@ -1,36 +1,21 @@
 ---
-import "../styles/style.css"
-import Card from "../components/Card.astro";
-import Navigation from "../components/Navigation.astro";
-import Button from "../components/Button.astro"
+import "../styles/style.css";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+const data = await fetch("https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter", {
+  method: "GET",
+  headers: {
+    apikey: 
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU"
+  },
+}).then(res=>res.json());
+
+console.log(data);
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
-		<link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <Navigation />
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eos aliquam voluptatem eaque culpa ut? Sint adipisci repellendus incidunt fuga cumque ratione ex magni doloribus nulla, labore dolor nihil vel.
-		Doloremque fuga odit qui consequatur ut, sapiente enim tempora dicta dolorem eius vitae tenetur, rerum hic blanditiis pariatur aut. Vitae nam autem dolore perspiciatis illum necessitatibus distinctio sapiente et odit.
-		Perspiciatis tenetur animi eaque, deleniti commodi recusandae saepe molestias corporis est atque quas labore nihil inventore ad quisquam sapiente earum molestiae placeat. Adipisci velit commodi qui provident veniam excepturi cum?
-		Distinctio eius ex, magni blanditiis, dolore a hic tempore, dolorem facere in nulla consectetur incidunt quidem veniam non quo. Unde voluptatum maiores odio porro minima temporibus assumenda voluptatibus atque sunt.
-	</p>
-    <main>
-			<Button variant="primary" size="small">TEXT</Button>
-			<Button variant="secondary" size="medium">TEXT</Button>
-			<Button variant="secondary" size="large">TEXT</Button>
-      <Card header="Hello world">
-				<img src="/roeget-sild.jpg" alt="sild">
-				<button>Click here!</button>
-			</Card>
-      <slot />
-    </main>
-  </body>
-</html>
+<Layout title="Forside">
+  <Button variant="primary" size="small">TEXT</Button>
+  <Button variant="secondary" size="medium">TEXT</Button>
+  <Button variant="secondary" size="large">TEXT</Button>
+</Layout>
