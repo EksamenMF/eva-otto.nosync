@@ -2,6 +2,7 @@
 import "../styles/style.css";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+import Produkter from "../components/Produkter.astro"
 
 const data = await fetch("https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter", {
   method: "GET",
@@ -18,4 +19,12 @@ console.log(data);
   <Button variant="primary" size="small">TEXT</Button>
   <Button variant="secondary" size="medium">TEXT</Button>
   <Button variant="secondary" size="large">TEXT</Button>
+  <section>
+    {
+      data.map((produkter: any) => {
+        return <Produkter data={produkter} />;
+      })
+    }
+  </section>
+
 </Layout>

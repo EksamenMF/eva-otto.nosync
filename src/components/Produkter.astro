@@ -1,0 +1,16 @@
+---
+const { data } = Astro.props;
+console.log(data);
+---
+
+<article>
+  <h2>{data.name}</h2>
+  <p>{data.pris}</p>
+  <p>{data.description}</p>
+</article>
+
+<style>
+ * {
+  color: black;
+ } 
+</style>
