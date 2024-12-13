@@ -2,7 +2,7 @@
 import "../styles/style.css";
 import Layout from "../layouts/Layout.astro";
 import BuyButton from "../components/BuyButton.astro";
-import Produkter from "../components/Produkter.astro"
+import ProductCard from "../components/ProductCard.astro"
 
 const data = await fetch("https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter", {
   method: "GET",
@@ -22,7 +22,7 @@ console.log(data);
   <section>
     {
       data.map((produkter: any) => {
-        return <Produkter data={produkter} />;
+        return <ProductCard data={produkter} />;
       })
     }
   </section>
