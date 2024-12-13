@@ -2,13 +2,13 @@
 import "../styles/style.css";
 import Layout from "../layouts/Layout.astro";
 const showOfferBar = true;
-import Card from "../components/Card.astro";
+import BasketBuyCard from "../components/BasketBuyCard.astro";
 ---
 
 <Layout title="Om Os">
   <h2>About us</h2>
-  <Card header="Sild" />
-  <Card header="Laks" soldOut={true}/>
-  <Card header="Blæksprutte" />
+  <BasketBuyCard header="Sild" />
+  <BasketBuyCard header="Laks" soldOut={true}/>
+  <BasketBuyCard header="Blæksprutte" />
 </Layout>
 

@@ -1,16 +1,18 @@
 ---
 const { data } = Astro.props;
-console.log(data);
+
 ---
 
-<article>
-  <h2>{data.name}</h2>
-  <p>{data.pris}</p>
-  <p>{data.description}</p>
-</article>
+<a href={`produkter/${data.slug}`}>
+  <article>
+    <h2 class="name">{data.name}</h2>
+    <p class="price">{data.pris}</p>
+    <p class="description">{data.description}</p>
+  </article>
+</a>
 
 <style>
- * {
-  color: black;
- } 
+  * {
+    color: black;
+  }
 </style>

@@ -1,0 +1,35 @@
+---
+// @ts-nocheck
+import { slide } from 'astro:transitions';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const url = "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter";
+  const options = {
+    method: "GET",
+    headers: {
+      apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU`,
+    }
+  };
+
+  const produkter = await fetch(url, options).then((res) => res.json());
+  return produkter.map((produkt: any) => ({
+    params: { slug: produkt.slug }, // [artist]=artist.slug
+    props: {
+      produkt,
+    }, // send al data med som props
+  }));
+}
+
+const {produkt} = Astro.props
+console.log(produkt);
+---
+
+<Layout title={produkt.name}>
+  <img src={produkt.image} alt={produkt.image}>
+  <h2>{produkt.name}</h2>
+  <p>{produkt.kg}</p>
+  <p>{produkt.pris}</p>
+  <p>{produkt.description}</p>
+
+</Layout>
