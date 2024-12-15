@@ -1,13 +1,16 @@
 ---
 const { data } = Astro.props;
+const {soldOut} = Astro.props;
 ---
 
 <a href={`produkter/${data.slug}`}>
   <article>
     <img src={data.image} alt={data.image} />
     <div class="card-content">
-      <h2 class="name">{data.name}</h2>
-      <p class="price">{data.pris}</p>
+      <div class="name-price">
+        <h2 class="name">{data.name}</h2>
+        <p class="price">{data.pris} DKK</p>
+      </div>
       <p class="description">{data.description}</p>
       <div class="btn-content">
         <button>Tilføj til kurv</button>
@@ -54,8 +57,15 @@ const { data } = Astro.props;
     padding: 16px;
     text-align: left;
   }
+
+  .name-price {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 12px;
+}
   .name {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
     margin-bottom: 8px;
@@ -66,22 +76,23 @@ const { data } = Astro.props;
     font-weight: bold;
     margin-bottom: 12px;
     display: flex;
-    justify-content: space-between; /* Fordeler pladsen mellem name og price */
+    justify-content: space-between; 
     align-items: center;
   }
   .description {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 16px;
     opacity: 80%;
   }
 
   button {
+    display: flex;
     background-color: #19437d;
     color: #fff;
     font-family: "EB Garamond", serif;
-    padding: 2% 38%;
+    padding: 2% 10%;
     border-radius: 2px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: regular;
     transition: background-color 0.3s ease;
   }
