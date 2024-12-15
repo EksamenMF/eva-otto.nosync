@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   };
 
   const produkter = await fetch(url, options).then((res) => res.json());
-  return produkter.map((data: any) => ({
+  return produkter.map((data) => ({
     params: { slug: data.slug }, // [artist]=artist.slug
     props: {
       data,
