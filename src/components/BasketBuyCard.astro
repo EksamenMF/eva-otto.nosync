@@ -9,7 +9,7 @@ const text = Astro.props.text;
 <article class="card">
   <h2>{header}</h2>
   {soldOut && <p>UDSOLGT!</p>} 
-  <p>kortere lorem</p>
+  <p></p>
   <slot />
 </article>
 
@@ -17,7 +17,5 @@ const text = Astro.props.text;
 p {
   color: black;
 }
-.card {
-  background-color: azure;
-}
+
 </style>
