@@ -54,18 +54,6 @@ const koldrøgetProdukter = sortedData.filter(
 </Layout>
 
 <style>
-
-@media (max-width: 1000px) {
-  .produkt-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .produkt-grid {
-    grid-template-columns: 1fr;
-  }
-}
   section {
     margin: 40px;
   }
@@ -84,6 +72,16 @@ const koldrøgetProdukter = sortedData.filter(
     margin-bottom: 16px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1400px) {
+  .produkt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .produkt-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>

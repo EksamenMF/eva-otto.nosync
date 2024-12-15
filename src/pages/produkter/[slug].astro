@@ -13,22 +13,22 @@ export async function getStaticPaths() {
   };
 
   const produkter = await fetch(url, options).then((res) => res.json());
-  return produkter.map((produkt: any) => ({
-    params: { slug: produkt.slug }, // [artist]=artist.slug
+  return produkter.map((data: any) => ({
+    params: { slug: data.slug }, // [artist]=artist.slug
     props: {
-      produkt,
+      data,
     }, // send al data med som props
   }));
 }
 
-const {produkt} = Astro.props
-console.log(produkt);
+const {data} = Astro.props
+console.log(data);
 ---
 
-<Layout title={produkt.name}>
-  <img src={produkt.image} alt={produkt.image}>
-  <h2>{produkt.name}</h2>
-  <p>{produkt.kg}</p> 
-  <p>{produkt.pris}</p>
-  <p>{produkt.description}</p>
+<Layout title={data.SWtitle}>
+  <img src={data.image} alt={data.image} />
+  <h2>{data.namel}</h2>
+  <p>{data.kg}</p> 
+  <p>{data.pris}</p>
+  <p>{data.description}</p>
 </Layout>

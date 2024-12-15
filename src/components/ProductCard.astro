@@ -90,7 +90,8 @@ const {soldOut} = Astro.props;
     background-color: #19437d;
     color: #fff;
     font-family: "EB Garamond", serif;
-    padding: 2% 10%;
+    padding: 2% 30%;
+    margin-top: 8%;
     border-radius: 2px;
     font-size: 1.5rem;
     font-weight: regular;
@@ -106,4 +107,14 @@ const {soldOut} = Astro.props;
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 1400px) {
+  button {
+    font-size: 1rem
+  }
+}
+
+@media (max-width: 750px) {
+ 
+}
 </style>
