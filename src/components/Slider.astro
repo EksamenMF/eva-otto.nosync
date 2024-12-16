@@ -4,26 +4,77 @@
 
 <div class="logos">
   <div class="logos-slide">
-    <img src="./billeder/IMG_oelskilt.jpg" alt="skilt" />
-    <img src="./billeder/IMG_stemning2.jpg" alt="ol" />
-    <img src="./billeder/IMG_tavle.jpg" alt="tavle" />
-    <img src="./billeder/IMG_stemning.jpg" alt="stemning2" />
-    <img src="./billeder/IMG_borde2.jpg" alt="interiør" />
-    <img src="./billeder/IMG_hylde.jpg" alt="fustache-haner" />
-    <img src="./billeder/IMG_oel.jpg" alt="øl" />
+    <img src="./laks.webp" alt="skilt" />
+    <img src="./laks.webp" alt="ol" />
+    <img src="./laks.webp" alt="tavle" />
+    <img src="./laks.webp" alt="stemning2" />
+    <img src="./laks.webp" alt="interiør" />
+    <img src="./laks.webp" alt="fustache-haner" />
+    <img src="./laks.webp" alt="øl" />
   </div>
   <div class="logos-slide">
-    <img src="./billeder/IMG_oelskilt.jpg" alt="skilt" />
-    <img src="./billeder/IMG_stemning2.jpg" alt="ol" />
-    <img src="./billeder/IMG_tavle.jpg" alt="tavle" />
-    <img src="./billeder/IMG_stemning.jpg" alt="stemning2" />
-    <img src="./billeder/IMG_borde2.jpg" alt="interiør" />
-    <img src="./billeder/IMG_hylde.jpg" alt="fustache-haner" />
-    <img src="./billeder/IMG_oel.jpg" alt="øl" />
+    <img src="./laks.webp" alt="skilt" />
+    <img src="./laks.webp" alt="ol" />
+    <img src="./laks.webp" alt="tavle" />
+    <img src="./laks.webp" alt="stemning2" />
+    <img src="./laks.webp" alt="interiør" />
+    <img src="./laks.webp" alt="fustache-haner" />
+    <img src="./laks.webp" alt="øl" />
   </div>
 </div>
 
 <style>
+  @media (min-width: 1200px) {
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .logos {
+      overflow: hidden;
+      padding: 60px 0;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    .logos:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+    }
+
+    .logos:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+    }
+
+    /* .logos:hover .logos-slide {
+  animation-play-state: paused;
+} */
+
+    .logos-slide {
+      display: inline-block;
+      animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+      height: 400px; /* Adjust height as needed */
+      margin: 0 40px;
+    }
+  }
   @media (max-width: 480px) {
     @keyframes slide {
       from {
