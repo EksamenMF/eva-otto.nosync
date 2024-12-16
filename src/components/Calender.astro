@@ -1,0 +1,154 @@
+---
+
+---
+
+<div class="calendar-wrapper">
+  <div class="wrapper">
+    <header>
+      <p class="current-date">December 2024</p>
+      <div class="icons">
+        <span class="material-symbols-outlined"> chevron_left </span>
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </div>
+    </header>
+    <div class="calendar">
+      <ul class="weeks">
+        <li>Søn</li>
+        <li>Man</li>
+        <li>Tir</li>
+        <li>Ons</li>
+        <li>Tor</li>
+        <li>Fre</li>
+        <li>Lør</li>
+      </ul>
+      <ul class="days">
+        <li class="inactive">28</li>
+        <li class="inactive">29</li>
+        <li class="inactive">30</li>
+        <li class="inactive">31</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li class="inactive">1</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .calendar-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      width: 450px;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    .wrapper header {
+      display: flex;
+      align-items: center;
+      padding: 25px 30px 10px;
+      justify-content: space-between;
+    }
+
+    header .current-date {
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    header .icons span {
+      height: 38px;
+      width: 38px;
+      color: #878787;
+      font-size: 1.9rem;
+      margin: 0 1px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 38px;
+      border-radius: 50%;
+    }
+
+    header .icons span:hover {
+      background-color: #f2f2f2;
+    }
+
+    header .icons span:last-child {
+      margin-right: -10px;
+    }
+
+    .calendar {
+      padding: 20px;
+    }
+    .calendar ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .calendar .weeks li {
+      font-weight: 500;
+    }
+
+    .calendar ul li {
+      position: relative;
+      width: calc(100% / 7);
+    }
+
+    .calendar .days li {
+      z-index: 1;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    .days li.inactive {
+      color: #aaa;
+    }
+    .calendar .days li::before {
+      position: absolute;
+      content: "";
+      height: 40px;
+      width: 40px;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: #f2f2f2;
+    }
+
+    .days li:hover::before {
+      background: #f2f2f2;
+    }
+  </style>
+</div>
