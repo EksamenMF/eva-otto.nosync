@@ -1,6 +1,7 @@
 ---
 import ProductCard from "../components/ProductCard.astro";
 import BasketBuyCard from "../components/BasketBuyCard.astro";
+import Burger from "../components/Burger.astro";
 const { title } = Astro.props;
 ---
 
@@ -20,6 +21,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Burger />
     <BasketBuyCard />
     <h1>{title}</h1>
     <main>

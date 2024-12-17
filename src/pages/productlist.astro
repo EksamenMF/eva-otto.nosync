@@ -29,14 +29,14 @@ const koldrøgetProdukter = sortedData.filter(
 );
 ---
 
-<Burger />
 
-<div class="titelboks">
-  <span class="linje left"></span>
-  <span class="titel">PRODUKTER</span>
-  <span class="linje right"></span>
-</div>
 <Layout>
+  
+  <div class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">PRODUKTER</span>
+    <span class="linje right"></span>
+  </div>
   <section>
     <h2>Varmrøget</h2>
     <ul class="produkt-grid">
@@ -61,7 +61,7 @@ const koldrøgetProdukter = sortedData.filter(
 </Layout>
 
 <style>
-  *{
+  * {
     background-color: #ebe7dc;
   }
   .titelboks {
@@ -69,6 +69,7 @@ const koldrøgetProdukter = sortedData.filter(
     align-items: center;
     justify-content: center;
     gap: 33px;
+    margin-top:5%
   }
 
   .linje {
@@ -77,7 +78,7 @@ const koldrøgetProdukter = sortedData.filter(
     position: relative;
     width: 150px;
     height: 2px;
-    background-color: #ebe7dc;
+    background-color: rgba(101, 98, 85, 1);
   }
 
   .left::before,

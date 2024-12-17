@@ -30,9 +30,8 @@ console.log(data);
     <div class="product-images">
       <!-- Thumbnails (dupliker hovedbilledet, eller tilføj flere, hvis du har forskellige billeder) -->
       <div class="thumbnails">
-        <img src={`/img/${data.image}`} alt={`${data.name} thumbnail`} />
-        <img src={`/img/${data.image}`} alt={`${data.name} thumbnail`} />
-        <img src={`/img/${data.image}`} alt={`${data.name} thumbnail`} />
+        <img src={`/img/${data.image}`} alt={data.image} />
+        <img src={`/img/${data.image}`} alt={data.image} />
       </div>
       
       <div class="main-image">
@@ -65,11 +64,16 @@ console.log(data);
   gap: 20px;
   padding: 40px;
   box-sizing: border-box;
+  margin: 0 2% 0 2%;
+  font-family: "EB Garamond", serif;
+  color: black;
+  
 }
 
 .product-images {
   display: flex;
-  gap: 20px;
+  
+  gap: 10px;
 }
 
 .thumbnails {
@@ -79,34 +83,38 @@ console.log(data);
 }
 
 .thumbnails img {
-  width: 80px;
+  width: 294px;
   height: auto;
   border: 1px solid #ccc;
-  cursor: pointer;
+  
 }
 
 .main-image img {
-  width: 400px;
+  width: 600px;
   height: auto;
   border: 1px solid #ccc;
+  
 }
 
 .product-info {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 3%;
+  background-color: #ffffff;
+  z-index: 10;
+
 }
 
 .product-info h2 {
-  margin: 0;
   font-size: 1.8rem;
-  color: #19437D;
+  color: 
 }
 
 .price {
   font-weight: bold;
   margin: 10px 0;
-  color: #19437D;
+  
 }
 
 .kg {
@@ -120,7 +128,7 @@ h3 {
 .description {
   margin-bottom: 20px;
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .buy-section {
@@ -166,5 +174,12 @@ h3 {
   .main-image img {
     width: 80%;
   }
+  .thumbnails img {
+  display: none;
+  
 }
+
+}
+
+
 </style>
