@@ -1,6 +1,7 @@
 ---
 import Slider from "../components/Slider.astro";
 import Calender from "../components/Calender.astro";
+import BasketCard from "../components/BasketCard.astro";
 ---
 
 <!doctype html>
@@ -16,9 +17,15 @@ import Calender from "../components/Calender.astro";
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <Calender />
+    <BasketCard />
   </body>
   <script src="../../src/java/calendar.js"></script>
 </html>
