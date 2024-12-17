@@ -4,7 +4,7 @@
 
 <body>
   <header>
-    <div class="logo"><img src="/img/logo_eva.webp" alt=""></div>
+    <div class="logo"><a href="/index.astro"><img src="/img/logo_eva.webp" alt="" /></a></div>
     <button class="burger-menu" id="burgerMenu">
       <span></span>
       <span></span>
@@ -12,8 +12,9 @@
     </button>
   </header>
 
+  <div class="overlay hidden" id="overlay"></div>
   <nav id="menu" class="hidden">
-<img src="../img/logo_eva.webp" alt="Logo">
+    <img src="../img/logo_eva.webp" alt="Logo" />
     <ul>
       <li><a href="*">Julefrokost</a></li>
       <li><a href="*">Events</a></li>
@@ -22,14 +23,27 @@
       <li class="last-li"><a href="*">Om os</a></li>
     </ul>
   </nav>
+
   <script>
     //@ts-nocheck
     const burgerMenu = document.getElementById("burgerMenu");
     const menu = document.getElementById("menu");
-
-      burgerMenu.addEventListener("click", () => {
-      menu.classList.toggle("hidden"); 
+    const overlay = document.getElementById("overlay");
+  
+    function toggleMenu() {
+      menu.classList.toggle("hidden");
       burgerMenu.classList.toggle("open");
+      overlay.classList.toggle("hidden");
+    }
+  
+    // Klik på burger-menuen åbner/lukker menuen
+    burgerMenu.addEventListener("click", toggleMenu);
+  
+    // Klik på overlayet lukker menuen, hvis den er åben
+    overlay.addEventListener("click", () => {
+      if (!menu.classList.contains("hidden")) {
+        toggleMenu();
+      }
     });
   </script>
 </body>
@@ -37,8 +51,7 @@
 <style>
   body {
     margin: 0;
-     font-family: "EB Garamond", serif;
-    
+    font-family: "EB Garamond", serif;
   }
 
   header {
@@ -57,7 +70,7 @@
     width: 45px;
     height: 45px;
     cursor: pointer;
-    background-color: #094D92;
+    background-color: #094d92;
     border-radius: 10px;
   }
 
@@ -69,6 +82,21 @@
     border-radius: 10px;
     gap: px;
   }
+
+  .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3); /* let mørkning */
+  backdrop-filter: blur(5px);   /* blur-effekt */
+  z-index: 1;                 /* overlay over alt andet indhold */
+}
+
+.overlay.hidden {
+  display: none;
+}
   nav {
     background-color: #ebe7dc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -80,7 +108,7 @@
     z-index: 1;
   }
 
-  img{
+  img {
     margin-top: 5%;
   }
 
@@ -88,7 +116,6 @@
     list-style: none;
     padding: 1%;
     margin: 0 5% 5% 5%;
-    
   }
 
   nav li {
@@ -96,24 +123,23 @@
     margin-top: 8%;
     border: 5px solid #ffffff;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px 7px rgba(217,217,217,1);
+    box-shadow: 0px 0px 0px 7px rgba(217, 217, 217, 1);
   }
 
   nav a {
     display: block;
     padding: 1px;
     text-decoration: none;
-    color: #094D92;
+    color: #094d92;
     font-size: 35px;
     font-weight: bold;
   }
 
   nav.hidden {
-    display: none; 
+    display: none;
   }
 
-.last-li {
-  margin-bottom: 15%;
-}
-
+  .last-li {
+    margin-bottom: 15%;
+  }
 </style>
