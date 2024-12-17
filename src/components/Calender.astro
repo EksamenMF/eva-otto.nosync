@@ -43,12 +43,12 @@ import Layout from "../layouts/Layout.astro";
       ".icons span"
     ); /* Finder begge <span>-elementer med klassen .icons, som bruges til at gå til forrige/næste måned. */
 
-  // getting new date, current year, and month
-  let date = new Date(),
-    currYear = date.getFullYear(),
-    currMonth = date.getMonth();
+  let date = new Date() /*  Starter med dagens dato (new Date()). */,
+    currYear = date.getFullYear() /* Gemmer det aktuelle år (f.eks. 2024). */,
+    currMonth =
+      date.getMonth(); /* Gemmer den aktuelle måned som et tal (f.eks. januar = 0, december = 11). */
 
-  // storing full name of all months in an array
+  /* En liste over alle månedsnavne, så vi kan vise dem i stedet for kun tal. */
   const months = [
     "January",
     "February",
@@ -64,16 +64,23 @@ import Layout from "../layouts/Layout.astro";
     "December",
   ];
 
+  /* Tjekker, om de nødvendige HTML-elementer (daysTag og currentDate) findes. Hvis ikke, logges en fejl, og funktionen stopper. */
   const renderCalendar = () => {
     if (!daysTag || !currentDate) {
       console.error("Required DOM elements not found.");
       return;
     }
 
-    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // first day of month
-      lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // last date of month
-      lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // last day of month
-      lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // last date of previous month
+    /* Finder ugedagen for den første dag i måneden (f.eks. søndag = 0, mandag = 1). */
+    /* Finder den sidste dato i måneden (f.eks. 31 for januar, 28/29 for februar). */
+    /* Finder ugedagen for den sidste dag i måneden. */
+    /* Finder den sidste dato i måneden før (f.eks. 31 for december, hvis måneden er januar). */
+
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+      lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+      lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+      lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+
     let liTag = "";
 
     for (let i = firstDayofMonth; i > 0; i--) {
