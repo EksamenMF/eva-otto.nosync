@@ -3,6 +3,7 @@
 import { slide } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
 
+//laver statiske stier for hvert produkt 
 export async function getStaticPaths() {
   const url = "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter";
   const options = {
@@ -11,21 +12,25 @@ export async function getStaticPaths() {
       apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU`,
     },
   };
+// Forklaring på brugen af url og options kan findes på productlist.astro
 
+// Fetcher data og koncerterer til json 
   const produkter = await fetch(url, options).then((res) => res.json());
+  // Retunerer stien ud fra slug, som er en del af vores database i supabase 
   return produkter.map((data) => ({
     params: { slug: data.slug }, // [artist]=artist.slug
     props: {
       data,
-    }, // send al data med som props
+    }, // sender al data med som props
   }));
 }
 
+// henter data som props, som bruges til at vise data på sitet. 
 const { data } = Astro.props;
 console.log(data);
 
 ---
-
+  <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
 <Layout>
   <div class="titelboks">
     <span class="linje left"></span>
@@ -47,7 +52,7 @@ console.log(data);
       <h2>{data.name}</h2>
       <div class="name-price">
         <p class="price">{data.pris} DKK</p>
-        {data.kg && <p class="kg">{data.kg}</p>}
+        {data.kg && <p class="kg">{data.kg}</p>} <!-- giver mulighed for at vælge kg, hvis det er en del af produktet -->
       </div>
       <h3>Produktbeskrivelse:</h3>
       <p class="description">{data.description}</p>
