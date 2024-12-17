@@ -32,11 +32,16 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </body>
 <script>
-  const daysTag = document.querySelector(".days") as HTMLElement | null;
+  const daysTag = document.querySelector(
+    ".days"
+  ) as HTMLElement | null; /* Finder elementet med klassen .days (listen, hvor dagene vises). */
   const currentDate = document.querySelector(
     ".current-date"
-  ) as HTMLElement | null;
-  const prevNextIcon = document.querySelectorAll(".icons span");
+  ) as HTMLElement | null; /*  Finder elementet med klassen .current-date (overskriften med måned og år). */
+  const prevNextIcon =
+    document.querySelectorAll(
+      ".icons span"
+    ); /* Finder begge <span>-elementer med klassen .icons, som bruges til at gå til forrige/næste måned. */
 
   // getting new date, current year, and month
   let date = new Date(),
@@ -168,8 +173,8 @@ import Layout from "../layouts/Layout.astro";
   }
   .calendar ul {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* Sikrer jævn fordeling */
-    gap: 20px; /* Tilføj afstand mellem elementer */
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
     list-style: none;
     text-align: left;
   }
@@ -197,7 +202,7 @@ import Layout from "../layouts/Layout.astro";
     color: #aaa;
   }
   .days li.active {
-    color: #fff;
+    color: #1720bc;
   }
   .days li::before {
     position: absolute;
