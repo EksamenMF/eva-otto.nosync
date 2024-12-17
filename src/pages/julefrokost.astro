@@ -1,0 +1,95 @@
+---
+import JuleFrokostCard from "../components/JuleFrokostCard.astro";
+import JuleFrokostCard2 from "../components/JuleFrokostCard2.astro";
+
+const julemenu = [
+  "Cremet karrysild med smilende æg, rødløg og æbler",
+  "Koldrøget laks med friskost, syltet stikkelsbær og rosa peber vinaigrette",
+  "Confiteret andelår med råmarineret tyttebær",
+  "Julesauce",
+  "Glaseret hvide aspargeskartofler med persille",
+  "Rødkål med ribsgele og diverse julekrydderier",
+  "Ribbenssteg med sprøde svær",
+  "Grønkålssalat med valnødder, appelsin og granatæble",
+  "Risalamande med kirsebærsauce og mandelgave fra huset",
+];
+const dagens = [
+  "Mandag: Coq au vin med grov kartoffelmos, gremolata og grøn salat 185,-",
+  "Onsdag: Stegt flæsk af dansk Duroc gris med persillesovs, glaserede aspargeskartofler og syltede rødbeder 185,-",
+  "Fredag: 300g Uruguay bøf med sauce bearnaise, bagt tomat og salat 295,-",
+  "Søndag: Mørbradgryde af ribeye 185,-",
+];
+
+const catering = ["Eva & Otto er også et catering firma. Med de mange års erfaring vi begge har indenfor den gastronomiske verden, kan vi skræddersy en menu som passer lige til jeres event/middag."];
+---
+
+<article>
+  <div class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">MAD</span>
+    <span class="linje right"></span>
+  </div>
+  <div class="cards-container">
+    <JuleFrokostCard src="../public/julefrokost.webp" alt="julebord" titel="JULEFROKOST" items={julemenu} />
+    <JuleFrokostCard2 src="../public/Flaesk.webp" alt="flæsk" titel="DAGENS RET" items={dagens} />
+    <JuleFrokostCard src="../public/madder.webp" alt="madder" titel="CATERING" items={catering} />
+  </div>
+</article>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+  article {
+    background-color: rgba(235, 231, 220, 1);
+  }
+
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 2px;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 40px;
+  }
+
+  .cards-container > * {
+    margin: 0;
+    width: 100%;
+  }
+</style>
