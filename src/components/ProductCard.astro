@@ -1,10 +1,10 @@
 ---
 const { data } = Astro.props;
-const {soldOut} = Astro.props;
+
 ---
 
 
-<a href={`produkter/${data.slug}`}>
+<a href={`/produkter/${data.slug}`}>
   <article class="content">
     <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">

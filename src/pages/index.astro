@@ -3,12 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import AboutIndex from "../components/AboutIndex.astro";
 import ProdukterIndex from "../components/ProdukterIndex.astro";
+
+const { data } = Astro.props
+
 ---
 
 <Layout>
 <Hero class="hero" />
 <AboutIndex />
 <ProdukterIndex />
+
 </Layout>
 
 
@@ -16,6 +20,7 @@ import ProdukterIndex from "../components/ProdukterIndex.astro";
  .hero {
   z-index: 100;
  }
+
 </style>
 
 
