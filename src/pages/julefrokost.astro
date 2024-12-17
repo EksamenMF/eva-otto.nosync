@@ -1,6 +1,7 @@
 ---
 import JuleFrokostCard from "../components/JuleFrokostCard.astro";
 import JuleFrokostCard2 from "../components/JuleFrokostCard2.astro";
+import Layout from "../layouts/Layout.astro";
 
 const julemenu = [
   "Cremet karrysild med smilende æg, rødløg og æbler",
@@ -22,7 +23,7 @@ const dagens = [
 
 const catering = ["Eva & Otto er også et catering firma. Med de mange års erfaring vi begge har indenfor den gastronomiske verden, kan vi skræddersy en menu som passer lige til jeres event/middag."];
 ---
-
+<Layout>
 <article>
   <div class="titelboks">
     <span class="linje left"></span>
@@ -30,12 +31,12 @@ const catering = ["Eva & Otto er også et catering firma. Med de mange års erfa
     <span class="linje right"></span>
   </div>
   <div class="cards-container">
-    <JuleFrokostCard src="../public/julefrokost.webp" alt="julebord" titel="JULEFROKOST" items={julemenu} />
-    <JuleFrokostCard2 src="../public/Flaesk.webp" alt="flæsk" titel="DAGENS RET" items={dagens} />
-    <JuleFrokostCard src="../public/madder.webp" alt="madder" titel="CATERING" items={catering} />
+    <JuleFrokostCard src="./julefrokost.webp" alt="julebord" titel="JULEFROKOST" items={julemenu} />
+    <JuleFrokostCard2 src="./Flaesk.webp" alt="flæsk" titel="DAGENS RET" items={dagens} />
+    <JuleFrokostCard src="./madder.webp" alt="madder" titel="CATERING" items={catering} />
   </div>
 </article>
-
+</Layout>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
   article {

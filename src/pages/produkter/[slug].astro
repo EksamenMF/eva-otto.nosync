@@ -44,7 +44,7 @@ console.log(data);
         <img src={`/img/${data.image}`} alt={data.name} />
       </div>
     </div>
-
+<div>
     <div class="product-info">
       <h2>{data.name}</h2>
       <div class="name-price">
@@ -67,7 +67,9 @@ console.log(data);
 </Layout>
 
 <style>
-
+*{
+  background-color: #ebe7dc;
+}
 
   .titelboks {
     display: flex;
@@ -144,7 +146,7 @@ console.log(data);
     flex: 1;
     flex-direction: column;
     padding-left: 3%;
-    background-color: #ffffff;
+    
     z-index: 10;
     font-family: "EB Garamond", serif;
     color: black;
