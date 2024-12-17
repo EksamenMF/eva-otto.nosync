@@ -5,7 +5,7 @@ const {soldOut} = Astro.props;
 
 
 <a href={`produkter/${data.slug}`}>
-  <article>
+  <article class="content">
     <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">
       <h2 class="name">{data.name}</h2>
@@ -23,7 +23,7 @@ const {soldOut} = Astro.props;
 
 <style>
   * {
-    background-color: #ebe7dc;;
+    background-color: #ffffff;;
     color: #656255;
     text-decoration: none;
   }
@@ -57,6 +57,7 @@ const {soldOut} = Astro.props;
   .card-content {
     padding: 16px;
     text-align: left;
+    
   }
 
   .name-price {

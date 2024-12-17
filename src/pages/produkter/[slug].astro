@@ -23,7 +23,6 @@ export async function getStaticPaths() {
 
 const { data } = Astro.props;
 console.log(data);
-
 ---
 
 <Layout>
@@ -39,12 +38,10 @@ console.log(data);
         <img src={`/img/${data.image}`} alt={data.image} />
         <img src={`/img/${data.image}`} alt={data.image} />
       </div>
-
       <div class="main-image">
         <img src={`/img/${data.image}`} alt={data.name} />
       </div>
     </div>
-<div>
     <div class="product-info">
       <h2>{data.name}</h2>
       <div class="name-price">
@@ -53,7 +50,6 @@ console.log(data);
       </div>
       <h3>Produktbeskrivelse:</h3>
       <p class="description">{data.description}</p>
-
       <div class="buy-section">
         <div class="quantity">
           <button>-</button>
@@ -64,170 +60,166 @@ console.log(data);
       </div>
     </div>
   </div>
-</Layout>
 
-<style>
-*{
-  background-color: #ebe7dc;
-}
-
-  .titelboks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 33px;
-    margin-top: 2%;
-  }
-
-  .linje {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 150px;
-    height: 2px;
-    background-color: rgba(101, 98, 85, 1);
-  }
-
-  .left::before,
-  .right::after {
-    content: "•";
-    position: absolute;
-    font-size: 25px;
-    color: rgba(101, 98, 85, 1);
-  }
-
-  .left::before {
-    left: -5px;
-  }
-
-  .right::after {
-    right: -5px;
-  }
-
-  .titel {
-    font-family: "Bungee Inline", sans-serif;
-    font-size: 50px;
-    color: rgba(101, 98, 85, 1);
-    letter-spacing: 1px;
-  }
-  .product-card {
-    display: flex;
-    gap: 20px;
-    padding: 40px;
-    box-sizing: border-box;
-    margin: 4% 2% 0 2%;
-  }
-
-  .product-images {
-    display: flex;
-    gap: 10px;
-  }
-
-  .thumbnails {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .thumbnails img {
-    width: 294px;
-    height: auto;
-    border: 1px solid #ccc;
-  }
-
-  .main-image img {
-    width: 600px;
-    height: auto;
-    border: 1px solid #ccc;
-  }
-
-  .product-info {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding-left: 3%;
-    
-    z-index: 10;
-    font-family: "EB Garamond", serif;
-    color: black;
-  }
-
-  .product-info h2 {
-    font-size: 1.8rem;
-    color:;
-  }
-
-  .name-price {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  .price {
-    font-weight: bold;
-    margin: 10px 0;
-    margin-right: 5%;
-  }
-
-  .kg {
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    margin-bottom: 15px;
-  }
-
-  .description {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    opacity: 0.8;
-  }
-
-  .buy-section {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  .quantity {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .quantity button {
-    padding: 5px 10px;
-    border: 1px solid #19437d;
-    background: #fff;
-    color: #19437d;
-    cursor: pointer;
-  }
-
-  .add-to-cart {
-    padding: 10px 20px;
-    background: #19437d;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-
-  .add-to-cart:hover {
-    background: #002a80;
-  }
-
-  /* Responsivt design */
-  @media (max-width: 768px) {
-    .product-card {
-      flex-direction: column;
+  <style>
+    .titelboks {
+      display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 2%;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+    .product-card {
+      display: flex;
+      gap: 20px;
+      padding: 40px;
+      box-sizing: border-box;
+      margin: 4% 2% 0 2%;
+    }
+
+    .product-images {
+      display: flex;
+      gap: 10px;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .thumbnails img {
+      width: 294px;
+      height: auto;
+      border: 1px solid #ccc;
     }
 
     .main-image img {
-      width: 80%;
+      width: 600px;
+      height: auto;
+      border: 1px solid #ccc;
     }
-    .thumbnails img {
-      display: none;
+
+    .product-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding-left: 3%;
+      background-color: #ffffff;
+      
+      font-family: "EB Garamond", serif;
+      color: black;
     }
-  }
-</style>
+
+    .product-info h2 {
+      font-size: 1.8rem;
+      color:;
+    }
+
+    .name-price {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-weight: bold;
+      margin: 10px 0;
+      margin-right: 5%;
+    }
+
+    .kg {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    .description {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    .buy-section {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .quantity {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .quantity button {
+      padding: 5px 10px;
+      border: 1px solid #19437d;
+      background: #fff;
+      color: #19437d;
+      cursor: pointer;
+    }
+
+    .add-to-cart {
+      padding: 10px 20px;
+      background: #19437d;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background: #002a80;
+    }
+
+    /* Responsivt design */
+    @media (max-width: 768px) {
+      .product-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-image img {
+        width: 80%;
+      }
+      .thumbnails img {
+        display: none;
+      }
+    }
+  </style>
+</Layout>
