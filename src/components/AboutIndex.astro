@@ -1,0 +1,115 @@
+---
+
+---
+
+<div class="container">
+  <div class="img-container">
+    <img src="../img/eva_otto.webp" alt="Eva & Otto" />
+  </div>
+  <div class="content-container">
+    <h2 class="titelboks">
+      <span class="linje left"></span>
+      <span class="titel">EVA & OTTO</span>
+      <span class="linje right"></span>
+    </h2>
+    <div class="text-container">
+      <p>
+        Hos Eva og Otto skaber vi rammerne for gode stunder med mad, der samler
+        mennesker. Med fokus på hygge, nærvær og høj kvalitet leverer vi alt fra
+        dagens ret til særlige events og catering.
+      </p>
+    </div>
+    <div class="button-container">
+    <button >Om os</button>
+  </div>
+  </div>
+</div>
+
+<style>
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin-top: 2%;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+  .container {
+    display: flex;
+    margin: 25% 5% 0 5%;
+  }
+
+  .text-container {
+    
+    width: 70%;
+    margin-left: 13%;
+  }
+
+  p {
+    font-family: "EB Garamond", serif;
+    box-sizing: 200px;
+    font-size: 1.2rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .img-container {
+    position: flex;
+    top: 2000px; /* Juster denne værdi */
+    left: 0;
+    transform: translateX(-50% -50%);
+  }
+
+  .button-container {
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 13%;
+  }
+
+  button {
+    background-color: rgba(25, 67, 125, 1);
+    color: rgba(235, 231, 220, 1);
+    padding: 20px, 40px;
+    width: 250px;
+    height: 65px;
+    border-radius: 10px;
+    border: none;
+    font-family: "EB Garamond", serif;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+  }
+</style>

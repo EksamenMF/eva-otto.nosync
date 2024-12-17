@@ -1,0 +1,55 @@
+---
+
+---
+
+<div>
+  <h2 class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">PRODUKTER</span>
+    <span class="linje right"></span>
+  </h2>
+</div>
+
+<style>
+   .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin: 8% 3% 0 3%;
+    background-color: #19437d;
+    height: 20vh;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: #ebe7dc;
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: #ebe7dc;
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: #ebe7dc;
+    letter-spacing: 1px;
+  }
+</style>
