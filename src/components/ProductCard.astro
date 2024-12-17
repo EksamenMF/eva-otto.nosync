@@ -8,9 +8,10 @@ const {soldOut} = Astro.props;
   <article>
     <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">
+      <h2 class="name">{data.name}</h2>
       <div class="name-price">
-        <h2 class="name">{data.name}</h2>
         <p class="price">{data.pris} DKK</p>
+        <p class="price">{data.kg}</p>
       </div>
       <p class="description">{data.description}</p>
       <div class="btn-content">
@@ -60,7 +61,7 @@ const {soldOut} = Astro.props;
 
   .name-price {
   display: flex;
-  justify-content: space-between; 
+  justify-content: left; 
   align-items: center; 
   margin-bottom: 12px;
 }
@@ -78,6 +79,7 @@ const {soldOut} = Astro.props;
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    margin-right: 4%;
   }
   .description {
     font-size: 1rem;
