@@ -1,8 +1,119 @@
 ---
-
+//@ts-nocheck
 ---
 
-<nav>
-<a href="/">HJem</a>
-<a href="/aboutus">Om os</a>
-</nav>
+<body>
+  <header>
+    <div class="logo"><img src="/img/logo_eva.webp" alt=""></div>
+    <button class="burger-menu" id="burgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <nav id="menu" class="hidden">
+<img src="../img/logo_eva.webp" alt="Logo">
+    <ul>
+      <li><a href="*">Julefrokost</a></li>
+      <li><a href="*">Events</a></li>
+      <li><a href="*">Produkter</a></li>
+      <li><a href="*">Galleri</a></li>
+      <li class="last-li"><a href="*">Om os</a></li>
+    </ul>
+  </nav>
+  <script>
+    //@ts-nocheck
+    const burgerMenu = document.getElementById("burgerMenu");
+    const menu = document.getElementById("menu");
+
+      burgerMenu.addEventListener("click", () => {
+      menu.classList.toggle("hidden"); 
+      burgerMenu.classList.toggle("open");
+    });
+  </script>
+</body>
+
+<style>
+  body {
+    margin: 0;
+     font-family: "EB Garamond", serif;
+    
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+  }
+
+  /* Burger menu knap */
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: #094D92;
+    border-radius: 10px;
+  }
+
+  .burger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    gap: px;
+  }
+  nav {
+    background-color: #ebe7dc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 30%;
+    z-index: 1;
+  }
+
+  img{
+    margin-top: 5%;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 1%;
+    margin: 0 5% 5% 5%;
+    
+  }
+
+  nav li {
+    background-color: #ffffff;
+    margin-top: 8%;
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 7px rgba(217,217,217,1);
+  }
+
+  nav a {
+    display: block;
+    padding: 1px;
+    text-decoration: none;
+    color: #094D92;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  nav.hidden {
+    display: none; 
+  }
+
+.last-li {
+  margin-bottom: 15%;
+}
+
+</style>

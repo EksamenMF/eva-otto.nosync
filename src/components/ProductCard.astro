@@ -3,9 +3,10 @@ const { data } = Astro.props;
 const {soldOut} = Astro.props;
 ---
 
+
 <a href={`produkter/${data.slug}`}>
   <article>
-    <img src={data.image} alt={data.image} />
+    <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">
       <div class="name-price">
         <h2 class="name">{data.name}</h2>
@@ -13,7 +14,7 @@ const {soldOut} = Astro.props;
       </div>
       <p class="description">{data.description}</p>
       <div class="btn-content">
-        <button>Tilføj til kurv</button>
+        <button>Læs mere</button>
       </div>
     </div>
   </article>
@@ -34,8 +35,7 @@ const {soldOut} = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-right: 10%;
     margin-bottom: 4%;
     margin-top: 4%;
     max-width: 100%;
@@ -44,7 +44,7 @@ const {soldOut} = Astro.props;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-    background-color: #ebe7dc;
+    
   }
 
   img {
@@ -99,7 +99,8 @@ const {soldOut} = Astro.props;
   }
 
   button:hover {
-    background-color: #002a80;
+    background-color: #ebe7dc;
+    color: #19437d;
   }
 
   .btn-content {
