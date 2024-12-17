@@ -1,26 +1,31 @@
 ---
-//@ts-nocheck
+//@ts-nocheck - Fjerner TypeScript - Det skal holdes bedre øje med tastefejl, når TS fjernes. 
+
+// Importerer komponenter 
 import "../styles/style.css";
 import Layout from "../layouts/Layout.astro";
 import BuyButton from "../components/BuyButton.astro";
 import ProductCard from "../components/ProductCard.astro";
 import Burger from "../components/Burger.astro";
 
+// Dataen fetches gennem vores API gennem supabase
 const data = await fetch(
   "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter",
   {
-    method: "GET",
+    method: "GET", // HTTP GET-method for at hente data
     headers: {
-      apikey:
+      apikey: // API-nøgle til godkendelse med Supabase
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU",
     },
   }
-).then((res) => res.json());
+).then((res) => res.json()); // Konverterer data til JSON, så det kan anvendes med js
 
 console.log(data);
 
+// Sorterer dataen alfabetisk efter name
 const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
 
+// Her filtreres vores data i to kategorier ud fra description. 
 const varmrøgetProdukter = sortedData.filter(
   (produkt) => produkt.description === "Varmrøget"
 );
@@ -29,8 +34,9 @@ const koldrøgetProdukter = sortedData.filter(
 );
 ---
 
-<title>Produkter</title>
+<!-- Vores wrapper alt vores indhold. Den indeholder header og footer -->
 <Layout>
+  <title>Produkter</title>
   
   <div class="titelboks">
     <span class="linje left"></span>
@@ -40,9 +46,10 @@ const koldrøgetProdukter = sortedData.filter(
   <section>
     <h2>Varmrøget</h2>
     <ul class="produkt-grid">
+      <!-- Mapper over listen af produkter og render et card for hvert produkt indefor kategorien  -->
       {
         varmrøgetProdukter.map((produkt) => {
-          return <ProductCard data={produkt} />;
+          return <ProductCard data={produkt} />; // sender det enkelte card-data videre. 
         })
       }
     </ul>
@@ -51,6 +58,7 @@ const koldrøgetProdukter = sortedData.filter(
   <section>
     <h2>Koldrøget</h2>
     <ul class="produkt-grid">
+      <!-- Mapper over listen af produkter og render et card for hvert produkt indefor kategorien  -->
       {
         koldrøgetProdukter.map((produkt) => {
           return <ProductCard data={produkt} />;
