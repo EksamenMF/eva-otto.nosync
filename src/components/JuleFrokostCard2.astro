@@ -1,0 +1,176 @@
+---
+import AboutButton from "./AboutButton.astro";
+const { src, alt, titel, items } = Astro.props;
+---
+
+<article class="grid">
+  <section class="text-section">
+    <div class="titelboks">
+      <span class="linje left"></span>
+      <span class="titel">{titel}</span>
+      <span class="linje right"></span>
+    </div>
+    <ul>
+      {items.map((item: string) => <li>{item}</li>)}
+    </ul>
+    <AboutButton text="BESTIL" />
+  </section>
+  <section class="image-section">
+    <img src={src} alt={alt} />
+  </section>
+</article>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    width: 90vw;
+    margin-left: 55px;
+    padding: 10px;
+  }
+
+  .text-section {
+    order: 1;
+  }
+
+  .image-section {
+    order: 2;
+  }
+
+  .image-section img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .indhold {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+
+  ul li {
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    color: rgba(51, 51, 51, 1);
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-left: 0;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .titel {
+      font-size: 40px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .titelboks {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .linje {
+      display: none;
+    }
+
+    ul li {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-left: 0;
+      padding: 5px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .titel {
+      font-size: 30px;
+    }
+
+    .titelboks {
+      gap: 15px;
+    }
+
+    ul li {
+      font-size: 14px;
+    }
+  }
+</style>
