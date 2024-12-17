@@ -1,11 +1,13 @@
 ---
+// Henter data objekt gennem props 
 const { data } = Astro.props;
 
 ---
-
-
+<!-- Hele cardet er wrapped i et link, som linker til [slug].astro - singleview -->
 <a href={`/produkter/${data.slug}`}>
   <article class="content">
+    <!-- Dynamisk billede sti -->
+    <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
     <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">
       <h2 class="name">{data.name}</h2>
@@ -122,3 +124,4 @@ const { data } = Astro.props;
  
 }
 </style>
+
