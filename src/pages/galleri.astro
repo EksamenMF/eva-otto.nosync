@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+<Layout>
+<article>
+  <div class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">GALLERI</span>
+    <span class="linje right"></span>
+  </div>
+  <p>
+    Tag et kig på vores galleri og få en smagsprøve på de stemningsfulde oplevelser, vi skaber. Hver ret og event er fyldt med hygge, varme og kvalitet - alt sammen tilberedt med hjertet. Bliv
+    inspireret af vores passion for god mad og fællesskab.
+  </p>
+  <div class="billeder">
+    <img src="/img/Stemning-01.webp" alt="stemning1" />
+    <img src="/img/Stemning-02.webp" alt="stemning2" />
+    <img src="/img/Stemning-03.webp" alt="stemning3" />
+    <img src="/img/Stemning-04.webp" alt="stemning4" />
+    <img src="/img/Stemning-05.webp" alt="stemning5" />
+    <img src="/img/Stemning-06.webp" alt="stemning6" />
+    <img src="/img/Stemning-07.webp" alt="stemning7" />
+    <img src="/img/Stemning-08.webp" alt="stemning8" />
+    <img src="/img/Stemning-09.webp" alt="stemning9" />
+    <img src="/img/Stemning-10.webp" alt="stemning10" />
+    <img src="/img/Stemning-11.webp" alt="stemning11" />
+    <img src="/img/Stemning-12.webp" alt="stemning12" />
+    <img src="/img/Stemning-13.webp" alt="stemning13" />
+    <img src="/img/Stemning-14.webp" alt="stemning14" />
+  </div>
+</article>
+</Layout>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+  article {
+    background-color: rgba(235, 231, 220, 1);
+  }
+  p {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    max-width: 75vw;
+    text-align: left;
+    margin: 0 auto;
+    padding: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+
+  .billeder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .billeder img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .billeder {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .billeder {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+//@ts-nocheck - Fjerner TypeScript - Det skal holdes bedre øje med tastefejl, når TS fjernes. 
+
+// Importerer komponenter 
+import "../styles/style.css";
+import Layout from "../layouts/Layout.astro";
+import BuyButton from "../components/BuyButton.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Burger from "../components/Burger.astro";
+
+// Dataen fetches gennem vores API gennem supabase
+const data = await fetch(
+  "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter",
+  {
+    method: "GET", // HTTP GET-method for at hente data
+    headers: {
+      apikey: // API-nøgle til godkendelse med Supabase
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU",
+    },
+  }
+).then((res) => res.json()); // Konverterer data til JSON, så det kan anvendes med js
+
+console.log(data);
+
+// Sorterer dataen alfabetisk efter name
+const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
+
+// Her filtreres vores data i to kategorier ud fra description. 
+const varmrøgetProdukter = sortedData.filter(
+  (produkt) => produkt.description === "Varmrøget"
+);
+const koldrøgetProdukter = sortedData.filter(
+  (produkt) => produkt.description === "Koldrøget"
+);
+---
+
+<!-- Vores wrapper alt vores indhold. Den indeholder header og footer -->
+<Layout>
+  <title>Produkter</title>
+  
+  <div class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">PRODUKTER</span>
+    <span class="linje right"></span>
+  </div>
+  <section>
+    <h2>Varmrøget</h2>
+    <ul class="produkt-grid">
+      <!-- Mapper over listen af produkter og render et card for hvert produkt indefor kategorien  -->
+      {
+        varmrøgetProdukter.map((produkt) => {
+          return <ProductCard data={produkt} />; // sender det enkelte card-data videre. 
+        })
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Koldrøget</h2>
+    <ul class="produkt-grid">
+      <!-- Mapper over listen af produkter og render et card for hvert produkt indefor kategorien  -->
+      {
+        koldrøgetProdukter.map((produkt) => {
+          return <ProductCard data={produkt} />;
+        })
+      }
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  * {
+    background-color: #ebe7dc;
+  }
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin-top: 2%;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+  section {
+    margin: 40px;
+  }
+
+  .produkt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+
+  h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 4rem;
+    color: #19437d;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 1400px) {
+    .produkt-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 750px) {
+    .produkt-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+import AboutUsCard from "../components/AboutUsCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <article>
+    <div class="titelboks">
+      <span class="linje left"></span>
+      <span class="titel">OM OS</span>
+      <span class="linje right"></span>
+    </div>
+    <p>
+      Eva og Otto er en catering- og eventvirksomhed, der skaber oplevelser med
+      fokus på hygge, kvalitet og en hjemlig følelse. Vi tilbyder alt fra dagens
+      ret og julefrokoster til pop-up events og catering ud af huset, og vores
+      koncept bygger på at levere en professionel og velsmagende madoplevelse,
+      der samtidig rummer varme og nærvær. Med vores passion for god mad,
+      mangeårige erfaring og fællesskab skaber vi unikke begivenheder, hvor både
+      smag og stemning spiller en central rolle.
+    </p>
+    <AboutUsCard />
+  </article>
+</Layout>
+<style>
+  
+  article {
+    background-color: rgba(235, 231, 220, 1);
+  }
+
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 2px;
+  }
+  p {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    max-width: 75vw;
+    text-align: left;
+    margin: 0 auto;
+    padding: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+</style>
