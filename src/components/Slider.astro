@@ -2,6 +2,11 @@
 
 ---
 
+<div class="titelboks">
+  <span class="linje left"></span>
+  <span class="titel">Stemning</span>
+  <span class="linje right"></span>
+</div>
 <div class="logos">
   <div class="logos-slide">
     <img src="../../public/img/flæsk.webp" alt="skilt" />
@@ -25,6 +30,46 @@
 
 <style>
   @media (min-width: 1200px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+
     @keyframes slide {
       from {
         transform: translateX(0);
@@ -38,6 +83,7 @@
       padding: 60px 0;
       white-space: nowrap;
       position: relative;
+      margin-top: 50px;
     }
 
     .logos:before,
@@ -52,12 +98,12 @@
 
     .logos:before {
       left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos:after {
       right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
     }
     .logos-slide {
       display: inline-block;
@@ -70,6 +116,46 @@
     }
   }
   @media (min-width: 769px) and (max-width: 1200px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+
     @keyframes slide {
       from {
         transform: translateX(0);
@@ -84,6 +170,7 @@
       padding: 60px 0;
       white-space: nowrap;
       position: relative;
+      margin-top: 50px;
     }
 
     .logos:before,
@@ -98,12 +185,12 @@
 
     .logos:before {
       left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos:after {
       right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
     }
 
     /* .logos:hover .logos-slide {
@@ -121,6 +208,46 @@
     }
   }
   @media (min-width: 481px) and (max-width: 768px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
     @keyframes slide {
       from {
         transform: translateX(0);
@@ -135,6 +262,7 @@
       padding: 60px 0;
       white-space: nowrap;
       position: relative;
+      margin-top: 50px;
     }
 
     .logos:before,
@@ -149,12 +277,12 @@
 
     .logos:before {
       left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos:after {
       right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos-slide {
@@ -169,6 +297,46 @@
   }
 
   @media (max-width: 480px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 30px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
     @keyframes slide {
       from {
         transform: translateX(0);
@@ -183,6 +351,7 @@
       padding: 60px 0;
       white-space: nowrap;
       position: relative;
+      margin-top: 30px;
     }
 
     .logos:before,
@@ -197,12 +366,12 @@
 
     .logos:before {
       left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos:after {
       right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos-slide {
