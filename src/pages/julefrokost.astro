@@ -92,4 +92,44 @@ const catering = ["Eva & Otto er også et catering firma. Med de mange års erfa
     margin: 0;
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    .titelboks {
+      gap: 30px;
+    }
+
+    .linje {
+      width: 125px;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 22px;
+    }
+
+    .titel {
+      font-size: 40px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .titelboks {
+      gap: 20px;
+    }
+
+    .linje {
+      width: 100px;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 20px;
+    }
+
+    .titel {
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+  }
 </style>

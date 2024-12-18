@@ -70,4 +70,56 @@ import AboutUsCard from "../components/AboutUsCard.astro";
     padding: 25px;
     color: rgba(101, 98, 85, 1);
   }
+
+  @media (max-width: 768px) {
+    .titelboks {
+      gap: 30px;
+    }
+
+    .linje {
+      width: 125px;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 22px;
+    }
+
+    .titel {
+      font-size: 40px;
+      letter-spacing: 1.5px;
+    }
+
+    p {
+      font-size: 18px;
+      padding: 20px;
+      max-width: 80vw;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .titelboks {
+      gap: 20px;
+    }
+
+    .linje {
+      width: 100px;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 20px;
+    }
+
+    .titel {
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 16px;
+      padding: 15px;
+      max-width: 90vw;
+    }
+  }
 </style>
