@@ -14,7 +14,7 @@
       <div class="heading-wrapper">
         <p>Produkt</p>
         <p>Pris</p>
-        <p>Antal</p>
+        <p class="skub">Antal i gr</p>
       </div>
       <div class="text-wrapper">
         <p>Koldrøget Laks</p>
@@ -29,14 +29,14 @@
     <div class="boks-billede2"><img src="../../public/laks.webp" alt="" /></div>
     <div class="boks-bottom">
       <div class="heading-wrapper">
-        <p>Produkt</p>
-        <p>Pris</p>
-        <p>Antal</p>
+        <p class="grid-box1">Produkt</p>
+        <p class="grid-box2">Pris</p>
+        <p class="grid-box3 skub">Antal i gr</p>
       </div>
       <div class="text-wrapper">
-        <p>Koldrøget Laks</p>
-        <p>1000 DKK</p>
-        <div class="counter-container">
+        <p class="grid-box4">Koldrøget Laks</p>
+        <p class="grid-box5">1000 DKK</p>
+        <div class="counter-container grid-box6">
           <button id="minusBtn" class="btn">-</button>
           <div id="countBox" class="count-box">0</div>
           <button id="plusBtn" class="btn">+</button>
@@ -67,6 +67,46 @@
 
 <style>
   @media (min-width: 1200px) {
+    /* Overskift */
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      overflow: hidden;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
     body {
       background-color: #ebe7dc;
       font-family:
@@ -153,7 +193,6 @@
       justify-content: space-between;
       width: 90%;
       margin: 0 auto;
-      color: #656255;
       font-size: 1.5rem;
     }
     .text-wrapper {
@@ -237,9 +276,54 @@
     .buy:hover {
       transform: scale(1.05);
     }
+
+    .skub {
+      margin-right: 30px;
+    }
   }
 
   @media (min-width: 769px) and (max-width: 1200px) {
+    /* Overskift */
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+
+    /* Card */
     body {
       background-color: #ebe7dc;
       font-family:
@@ -326,7 +410,6 @@
       justify-content: space-between;
       width: 90%;
       margin: 0 auto;
-      color: #656255;
     }
     .text-wrapper {
       display: flex;
@@ -406,9 +489,52 @@
     .buy:hover {
       transform: scale(1.05);
     }
+
+    .skub {
+      margin-right: 20px;
+    }
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
+    /* Overskift */
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
     body {
       background-color: #ebe7dc;
       font-family:
@@ -419,12 +545,13 @@
     .container {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 0.3fr 0.7fr;
       gap: 10px;
       align-items: center;
       justify-content: center;
       width: 90%;
-      margin: 100px auto;
+      height: 100vh;
+      margin: 0px auto 200px;
     }
 
     .boks-top {
@@ -457,7 +584,6 @@
       width: 100%;
       height: 100%;
       border: 1px solid black;
-      margin-bottom: 50px;
       grid-column: 1/4;
       grid-row: 3;
       margin: 0;
@@ -471,7 +597,15 @@
       grid-column: 1/4;
       grid-row: 1;
       width: 100%;
-      height: 100%;
+      height: 50%;
+      margin: 0 auto;
+      background-color: #fff;
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 0.5rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      align-self: flex-end;
     }
     .boks-billede2 {
       display: grid;
@@ -485,33 +619,28 @@
 
     .boks-billede2 img,
     .boks-billede img {
-      width: 100%;
+      width: auto%;
       height: 100%;
       border: 1px solid black;
       border-radius: 0.5rem;
       object-fit: fill;
+      margin: 0 auto;
     }
 
     .heading-wrapper {
-      position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
       width: 90%;
       margin: 0 auto;
-      color: #656255;
     }
     .text-wrapper {
-      position: relative;
       display: flex;
       justify-content: space-between;
       width: 90%;
       margin: 0 auto;
       color: #000000;
-      flex-direction: column;
-      transform: translate(-);
+      align-items: center;
     }
-
     .counter-container {
       display: flex;
       align-items: center;
@@ -585,6 +714,46 @@
   }
 
   @media (max-width: 480px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 30px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
     body {
       background-color: #ebe7dc;
       font-family:
@@ -595,18 +764,17 @@
     .container {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 0.3fr 1fr;
       gap: 10px;
-      align-items: center;
-      justify-content: center;
       width: 90%;
-      margin: 100px auto;
+      height: 100vh;
+      margin: 0px auto 200px;
     }
 
     .boks-top {
       display: grid;
       width: 100%;
-      height: 100%;
+      height: min-content;
       border: 1px solid black;
       grid-column: 1/4;
       grid-row: 2;
@@ -633,21 +801,30 @@
       width: 100%;
       height: 100%;
       border: 1px solid black;
-      margin-bottom: 50px;
       grid-column: 1/4;
       grid-row: 3;
       margin: 0;
       background-color: #fff;
       border-radius: 0.5rem;
       margin: 0;
+      align-self: start;
     }
 
     .boks-billede {
-      display: grid;
+      display: flex;
       grid-column: 1/4;
       grid-row: 1;
       width: 100%;
-      height: 100%;
+      height: 50%;
+      margin: 0 auto;
+      background-color: #fff;
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 0.5rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      align-self: flex-end;
+      justify-content: center;
     }
     .boks-billede2 {
       display: grid;
@@ -657,32 +834,37 @@
       width: 100%;
       height: 100%;
       display: none;
+      align-self: start;
     }
 
     .boks-billede2 img,
     .boks-billede img {
-      width: 100%;
+      max-width: 100%;
       height: 100%;
       border: 1px solid black;
       border-radius: 0.5rem;
       object-fit: fill;
+      margin: 0 auto;
     }
 
     .heading-wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 90%;
+      height: auto;
       margin: 0 auto;
-      color: #656255;
     }
+
     .text-wrapper {
       display: flex;
       justify-content: space-between;
       width: 90%;
+      height: min-content;
       margin: 0 auto;
       color: #000000;
+      align-items: center;
     }
-
     .counter-container {
       display: flex;
       align-items: center;
@@ -690,7 +872,7 @@
     }
 
     .count-box {
-      width: 70px;
+      width: 30px;
       height: 20px;
       display: flex;
       align-items: center;
@@ -753,45 +935,5 @@
     .buy:hover {
       transform: scale(1.05);
     }
-  }
-
-  /* Overskift */
-  .titelboks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 33px;
-  }
-
-  .linje {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 150px;
-    height: 2px;
-    background-color: rgba(101, 98, 85, 1);
-  }
-
-  .left::before,
-  .right::after {
-    content: "•";
-    position: absolute;
-    font-size: 25px;
-    color: rgba(101, 98, 85, 1);
-  }
-
-  .left::before {
-    left: -5px;
-  }
-
-  .right::after {
-    right: -5px;
-  }
-
-  .titel {
-    font-family: "Bungee Inline", sans-serif;
-    font-size: 50px;
-    color: rgba(101, 98, 85, 1);
-    letter-spacing: 1px;
   }
 </style>
