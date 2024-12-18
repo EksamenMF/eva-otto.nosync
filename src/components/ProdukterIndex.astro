@@ -1,5 +1,19 @@
 ---
+//@ts-nocheck
+import ProductCard from "./ProductCard.astro";
 
+const data = await fetch(
+  "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter",
+  {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU",
+    },
+  }
+).then((res) => res.json());
+
+// Sorterer data alfabetisk og tager de første 3 produkter
+const treProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 6);
 
 ---
 
@@ -9,11 +23,20 @@
     <span class="titel">PRODUKTER</span>
     <span class="linje right"></span>
   </h2>
-    <div class="button-container">
-      <div>
+  <ul>
+    <section class="product-section">
+      <div class="product-grid">
+        {treProdukter.map((produkt) => (
+          <ProductCard data={produkt} />
+        ))}
       </div>
+    </section>
+  </ul>
+  <div class="button-container">
+    <div>
       <a href="../productlist"><button>Se alle produkter</button></a>
     </div>
+  </div>
 </div>
 
 <style>
@@ -59,17 +82,27 @@
     font-size: 50px;
     color: #ebe7dc;
     letter-spacing: 1px;
+    
+  }
+
+  .product-section {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-   
   }
 
   button {
-   
     background-color: rgba(25, 67, 125, 1);
     color: rgba(235, 231, 220, 1);
     padding: 20px, 40px;
@@ -81,5 +114,47 @@
     font-size: 30px;
     font-weight: 100;
     cursor: pointer;
+  }
+
+  @media (max-width: 1200px) {
+    .linje {
+      width: 100px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
+    .titel {
+      font-size: 30px;
+      
+    }
+
+    .titelboks {
+  
+    height: 15vh;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  
+  }
+
+  @media (max-width: 800px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+    
+
+    .titelboks {
+  
+    height: 10vh;
+  }
   }
 </style>
