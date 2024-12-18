@@ -7,11 +7,21 @@
     <div class="logo">
       <a href="/"><img src="/img/logo_eva.webp" alt="" /></a>
     </div>
-    <button class="burger-menu" id="burgerMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="button-container">
+      <a href="/basket"
+        ><button class="burger-basket"
+          ><img
+            src="https://img.icons8.com/?size=100&id=0DBkCUANmgoQ&format=png&color=000000"
+            alt=""
+          /></button
+        ></a
+      >
+      <button class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
   <div class="overlay hidden" id="overlay"></div>
@@ -64,15 +74,38 @@
     padding: 1%;
   }
 
-  /* Burger menu knap */
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Afstand mellem knapperne */
+  }
+
+  .burger-basket {
+    
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #094d92;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .burger-basket img {
+    width: 30px; /* Juster ikonets størrelse */
+    height: 30px;
+    filter: invert(100%); /* Gør ikonet hvidt for at matche farven */
+  }
   .burger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.5%;
+    padding: 8%;
     width: 45px;
     height: 45px;
     cursor: pointer;
+    border: none;
     background-color: #094d92;
     border-radius: 10px;
     margin-right: 2%;
@@ -148,20 +181,36 @@
   }
 
   @media (max-width: 800px) {
-
     nav li {
-    margin-top: 15%;
-   
-  }
+      margin-top: 15%;
+    }
     nav a {
       font-size: 20px;
-
-     
     }
 
     img {
       margin-top: 5%;
       max-width: 50%;
     }
+
+    .button-container {
+    margin-top: 1%;
+  }
+    .burger-basket,
+  .burger-menu {
+    width: 35px;
+    height: 35px;
+  }
+
+  .burger-basket img {
+    max-width: 110%; 
+    height: auto;
+    
+  }
+
+  .burger-menu span {
+    height: 2px; 
+  }
+}
   }
 </style>
