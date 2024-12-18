@@ -4,7 +4,9 @@
 
 <body>
   <header>
-    <div class="logo"><a href="/"><img src="/img/logo_eva.webp" alt="" /></a></div>
+    <div class="logo">
+      <a href="/"><img src="/img/logo_eva.webp" alt="" /></a>
+    </div>
     <button class="burger-menu" id="burgerMenu">
       <span></span>
       <span></span>
@@ -29,16 +31,16 @@
     const burgerMenu = document.getElementById("burgerMenu");
     const menu = document.getElementById("menu");
     const overlay = document.getElementById("overlay");
-  
+
     function toggleMenu() {
       menu.classList.toggle("hidden");
       burgerMenu.classList.toggle("open");
       overlay.classList.toggle("hidden");
     }
-  
+
     // Klik på burger-menuen åbner/lukker menuen
     burgerMenu.addEventListener("click", toggleMenu);
-  
+
     // Klik på overlayet lukker menuen, hvis den er åben
     overlay.addEventListener("click", () => {
       if (!menu.classList.contains("hidden")) {
@@ -76,31 +78,29 @@
     margin-right: 2%;
   }
 
-
-
   .burger-menu span {
     display: block;
     height: 3px;
     width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
-    gap: px;
+    gap: 20px;
   }
 
   .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.3); /* let mørkning */
-  backdrop-filter: blur(5px);   /* blur-effekt */
-  z-index: 1;                 /* overlay over alt andet indhold */
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+  }
 
-.overlay.hidden {
-  display: none;
-}
+  .overlay.hidden {
+    display: none;
+  }
   nav {
     background-color: #ebe7dc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -119,7 +119,7 @@
   nav ul {
     list-style: none;
     padding: 1%;
-    margin: 0 5% 5% 5%;
+    margin: 0 10% 10% 10%;
   }
 
   nav li {
@@ -145,5 +145,23 @@
 
   .last-li {
     margin-bottom: 15%;
+  }
+
+  @media (max-width: 800px) {
+
+    nav li {
+    margin-top: 15%;
+   
+  }
+    nav a {
+      font-size: 20px;
+
+     
+    }
+
+    img {
+      margin-top: 5%;
+      max-width: 50%;
+    }
   }
 </style>
