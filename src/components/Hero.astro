@@ -11,15 +11,16 @@
     </div>
   </div>
   <div class="cta-container">
-    <button class="cta-1">Julefrokost</button>
-    <button class="cta-2">Events</button>
+    <a href="../julefrokost"><button class="cta-1">Julefrokost</button></a>
+    <a href="../eventkalender"><button class="cta-2">Events</button></a>
   </div>
 </header>
 
 <style>
-
   header {
     margin-top: 5%;
+    
+  
   }
   .hero-img {
     width: 100%;
@@ -34,7 +35,6 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    
     z-index: -1;
   }
 
@@ -44,42 +44,111 @@
     align-items: center;
   }
   h1 {
-    font-family: "Bungee Inline", sans-serif;
+    font-family: "Bungee Inline", serif;
+    font-weight: 400;
+    font-style: normal;
     color: #19437d;
+    top: 10%;
     font-size: 150px;
     margin: 0;
     line-height: 0.9;
+    text-align: center;
+    position: absolute;
   }
 
-  .eva {
-    padding-left: 2%;
-  }
   .og {
     font-size: 50px;
   }
 
   .cta-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 10%;
+    margin-top: 5%;
   }
   .cta-1,
   .cta-2 {
     background-color: rgba(25, 67, 125, 1);
     color: rgba(235, 231, 220, 1);
     padding: 20px, 40px;
-    width: 175px;
+    width: 250px;
     height: 65px;
     border-radius: 10px;
     border: none;
     font-family: "EB Garamond", serif;
     font-size: 30px;
     font-weight: 100;
+    cursor: pointer;
+  }
+
+<<<<<<< HEAD
+  @media (max-width: 1200px) {
+=======
+  @media (max-width: 1300px) {
+    .logo-class {
+      margin-top: 5%;
+    }
+>>>>>>> oscarlund
+    h1 {
+      font-size: 100px;
+    }
+
+    .cta-container {
+      gap: 10px;
+      top: 35%;
+    }
+    .cta-1,
+    .cta-2 {
+      width: 180px;
+      height: 45px;
+      font-size: 18px;
+    }
+
+    .hero-img {
+      height: 70vh; 
+      width: 100%;
+    }
+
+    .header-section {
+      height: 70vh;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .logo-class {
+      margin-top: 5%;
+    }
+
+    h1 {
+      font-size: 80px;
+    }
+
+    .cta-container {
+      gap: 10px;
+      top: 30%;
+    }
+
+    .cta-1,
+    .cta-2 {
+      width: 150px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    .hero-img {
+      height: 50vh; /* Yderligere reduceret højde */
+      width: 100%;
+    }
+
+    .header-section {
+      height: 50vh;
+      width: 100%;
+    }
   }
 </style>

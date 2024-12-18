@@ -1,0 +1,205 @@
+---
+
+---
+
+<div class="container">
+  <div class="img-container">
+    <img src="../img/eva_otto.webp" alt="Eva & Otto" />
+  </div>
+  <div class="content-container">
+    <h2 class="titelboks">
+      <span class="linje left"></span>
+      <span class="titel">EVA & OTTO</span>
+      <span class="linje right"></span>
+    </h2>
+    <div class="text-container">
+      <p>
+        Hos Eva og Otto skaber vi rammerne for gode stunder med mad, der samler
+        mennesker. Med fokus på hygge, nærvær og høj kvalitet leverer vi alt fra
+        dagens ret til særlige events og catering.
+      </p>
+    </div>
+    <div class="button-container">
+      <a href="../aboutus"><button>Om os</button></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin-top: 2%;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+  .container {
+    display: flex;
+    margin: 250px 20px 0 20px;
+    padding-top: 400px;
+  }
+
+  
+  .text-container {
+    width: 70%;
+    margin-left: 13%;
+  }
+
+  p {
+    font-family: "EB Garamond", serif;
+    box-sizing: 200px;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .img-container {
+    position: static;
+    top: 2000px; /* Juster denne værdi */
+    left: 0;
+    transform: translateX(-50% -50%);
+    margin-top: 3%;
+  }
+
+  .button-container {
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 13%;
+  }
+
+  button {
+    background-color: rgba(25, 67, 125, 1);
+    color: rgba(235, 231, 220, 1);
+    padding: 20px, 40px;
+    width: 250px;
+    height: 65px;
+    border-radius: 10px;
+    border: none;
+    font-family: "EB Garamond", serif;
+    font-size: 30px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1300px) {
+    .linje {
+      width: 100px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
+    .titel {
+      font-size: 30px;
+    }
+    .container {
+      margin: 250px 30px 0 30px;
+
+      padding-top: 200px;
+    }
+
+    .text-container {
+      margin-left: 10%;
+    }
+
+    p {
+      font-family: "EB Garamond", serif;
+      box-sizing: 150px;
+      font-size: 1rem;
+    }
+
+  
+    .img-container {
+      margin-top: 5%;
+    }
+
+    .button-container {
+      width: 70%;
+      margin-top: 10%;
+      margin-left: 13%;
+    }
+
+    button {
+      width: 180px;
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .container {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px; 
+      margin-top: 150px;
+      padding-top: 150px;
+    }
+
+    .img-container {
+      order: 2;
+      max-width: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .content-container {
+      order: 1; /* Gør at teksten */
+      text-align: center;
+    }
+
+    .button-container {
+      margin-top: 30px;
+     
+    }
+
+    button {
+      width: 150px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+</style>

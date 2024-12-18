@@ -1,0 +1,86 @@
+---
+import Calender from "../components/Calender.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<body>
+  <Layout>
+    <div class="titelboks">
+      <span class="linje left"></span>
+      <span class="titel">Stemning</span>
+      <span class="linje right"></span>
+    </div>
+    <div class="ev-container">
+      <p>
+        Velkommen til Eva og Ottos eventkalender. Her kan du holde dig opdateret
+        på vores kommende pop-up events, sæsonfester og særlige arrangementer.
+        Uanset om du er til hyggelige middage, julefrokoster eller større
+        sammenkomster, har vi noget for enhver smag. Hold øje med kalenderen og
+        reserver din plads i god tid – vi glæder os til at byde dig velkommen
+        til en uforglemmelig oplevelse i Eva og Ottos selvskab.
+      </p>
+    </div>
+    <Calender />
+  </Layout>
+</body>
+
+<style>
+  body {
+    background-color: #ebe7dc;
+  }
+
+  .ev-container {
+    justify-content: center;
+    width: 70%;
+    height: min-content;
+    font-family: "EB Garamond", serif;
+    font-size: 30px;
+    margin: 100px auto;
+    color: #656255;
+  }
+
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin-top: 50px;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: rgba(101, 98, 85, 1);
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 50px;
+    color: rgba(101, 98, 85, 1);
+    letter-spacing: 1px;
+  }
+</style>

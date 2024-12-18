@@ -4,8 +4,8 @@
 
 <article>
   <div class="billedecontainer">
-    <img src="../public/Eva.webp" alt="Eva" class="right" />
-    <img src="../public/otto2.webp" alt="Otto" class="left" />
+    <img class="right" src="../img/Eva.webp" alt="Eva" />
+    <img class="left" src="../img/otto2.webp" alt="Otto" />
   </div>
 </article>
 
@@ -38,7 +38,7 @@
     z-index: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .billedecontainer {
       flex-direction: column;
     }
@@ -47,6 +47,7 @@
     .right {
       width: 80%;
       margin: 0;
+      z-index: 0;
     }
   }
 

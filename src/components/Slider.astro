@@ -2,29 +2,160 @@
 
 ---
 
+<div class="titelboks">
+  <span class="linje left"></span>
+  <span class="titel">Stemning</span>
+  <span class="linje right"></span>
+</div>
 <div class="logos">
   <div class="logos-slide">
-    <img src="./billeder/IMG_oelskilt.jpg" alt="skilt" />
-    <img src="./billeder/IMG_stemning2.jpg" alt="ol" />
-    <img src="./billeder/IMG_tavle.jpg" alt="tavle" />
-    <img src="./billeder/IMG_stemning.jpg" alt="stemning2" />
-    <img src="./billeder/IMG_borde2.jpg" alt="interiør" />
-    <img src="./billeder/IMG_hylde.jpg" alt="fustache-haner" />
-    <img src="./billeder/IMG_oel.jpg" alt="øl" />
+    <img src="../../public/img/flæsk.webp" alt="skilt" />
+    <img src="../../public/img/" alt="ol" />
+    <img src="../../public/img/" alt="tavle" />
+    <img src="../../public/img/" alt="stemning2" />
+    <img src="../../public/img/" alt="interiør" />
+    <img src="../../public/img/" alt="fustache-haner" />
+    <img src="../../public/img/" alt="øl" />
   </div>
   <div class="logos-slide">
-    <img src="./billeder/IMG_oelskilt.jpg" alt="skilt" />
-    <img src="./billeder/IMG_stemning2.jpg" alt="ol" />
-    <img src="./billeder/IMG_tavle.jpg" alt="tavle" />
-    <img src="./billeder/IMG_stemning.jpg" alt="stemning2" />
-    <img src="./billeder/IMG_borde2.jpg" alt="interiør" />
-    <img src="./billeder/IMG_hylde.jpg" alt="fustache-haner" />
-    <img src="./billeder/IMG_oel.jpg" alt="øl" />
+    <img src="../../public/img/" alt="skilt" />
+    <img src="../../public/img/" alt="ol" />
+    <img src="../../public/img/" alt="tavle" />
+    <img src="../../public/img/" alt="stemning2" />
+    <img src="../../public/img/" alt="interiør" />
+    <img src="../../public/img/" alt="fustache-haner" />
+    <img src="../../public/img/" alt="øl" />
   </div>
 </div>
 
 <style>
-  @media (max-width: 480px) {
+  @media (min-width: 1200px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    .logos {
+      overflow: hidden;
+      padding: 60px 0;
+      white-space: nowrap;
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    .logos:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
+    }
+
+    .logos:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
+    }
+    .logos-slide {
+      display: inline-block;
+      animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+      height: 400px; /* Adjust height as needed */
+      margin: 0 40px;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+
     @keyframes slide {
       from {
         transform: translateX(0);
@@ -39,6 +170,99 @@
       padding: 60px 0;
       white-space: nowrap;
       position: relative;
+      margin-top: 50px;
+    }
+
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    .logos:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
+    }
+
+    .logos:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
+    }
+
+    /* .logos:hover .logos-slide {
+          animation-play-state: paused;
+        } */
+
+    .logos-slide {
+      display: inline-block;
+      animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+      height: 400px; /* Adjust height as needed */
+      margin: 0 40px;
+    }
+  }
+  @media (min-width: 481px) and (max-width: 768px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 50px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .logos {
+      overflow: hidden;
+      padding: 60px 0;
+      white-space: nowrap;
+      position: relative;
+      margin-top: 50px;
     }
 
     .logos:before,
@@ -53,12 +277,101 @@
 
     .logos:before {
       left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos:after {
       right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), #235347);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
+    }
+
+    .logos-slide {
+      display: inline-block;
+      animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+      height: 400px; /* Adjust height as needed */
+      margin: 0 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .titelboks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 33px;
+      margin-top: 150px;
+    }
+
+    .linje {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 150px;
+      height: 2px;
+      background-color: rgba(101, 98, 85, 1);
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      content: "•";
+      position: absolute;
+      font-size: 25px;
+      color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before {
+      left: -5px;
+    }
+
+    .right::after {
+      right: -5px;
+    }
+
+    .titel {
+      font-family: "Bungee Inline", sans-serif;
+      font-size: 30px;
+      color: rgba(101, 98, 85, 1);
+      letter-spacing: 1px;
+    }
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .logos {
+      overflow: hidden;
+      padding: 60px 0;
+      white-space: nowrap;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    .logos:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #19437d);
+    }
+
+    .logos:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #19437d);
     }
 
     .logos-slide {
