@@ -117,6 +117,12 @@ const treProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 
   }
 
   @media (max-width: 1200px) {
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
     .linje {
       width: 100px;
       background-color: rgba(101, 98, 85, 1);
@@ -137,23 +143,19 @@ const treProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 
     height: 15vh;
   }
 
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+ 
 
   
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .product-grid {
       grid-template-columns: 1fr;
     }
     
 
     .titelboks {
-  
+      
     height: 10vh;
   }
   }

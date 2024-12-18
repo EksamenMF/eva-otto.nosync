@@ -46,7 +46,7 @@ const { data } = Astro.props;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-    
+  
   }
 
   img {
@@ -113,7 +113,7 @@ const { data } = Astro.props;
     justify-content: center;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 950px) {
     .name-price {
   display: flex;
   justify-content: left; 
@@ -137,22 +137,25 @@ const { data } = Astro.props;
   }
 }
 
-@media (max-width: 8000px) {
+@media (max-width: 700px) {
   article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-right: 10%;
+  
+    margin-left: 11%;
     margin-bottom: 4%;
     margin-top: 4%;
-    max-width: 50%;
+    max-width: 70%;
+    height: auto;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-    
+  
   }
- 
+  img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 </style>
 
