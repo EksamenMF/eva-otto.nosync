@@ -36,7 +36,7 @@ const koldrøgetProdukter = sortedData.filter(
 
 <!-- Vores wrapper alt vores indhold. Den indeholder header og footer -->
 <Layout>
-  <title>Produkter</title>
+  
   
   <div class="titelboks">
     <span class="linje left"></span>
@@ -124,8 +124,8 @@ const koldrøgetProdukter = sortedData.filter(
 
   h2 {
     font-family: "EB Garamond", serif;
-    font-size: 4rem;
-    color: #19437d;
+    font-size: 3rem;
+    color: black;
     margin-bottom: 16px;
   }
 
@@ -139,5 +139,26 @@ const koldrøgetProdukter = sortedData.filter(
     .produkt-grid {
       grid-template-columns: 1fr;
     }
+    .linje {
+      width: 100px;
+      background-color: rgba(101, 98, 85, 1);
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
+    .titel {
+      font-size: 35px;
+    }
+
+    .titelboks {
+    height: 15vh;
+  }
+
+ h2 {
+  font-size:2.5rem;
+ }
   }
 </style>
