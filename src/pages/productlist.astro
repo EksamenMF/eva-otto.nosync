@@ -22,9 +22,6 @@ const data = await fetch(
 
 console.log(data);
 
-// Sorterer dataen alfabetisk efter name
-const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
-
 // Her filtreres vores data i to kategorier ud fra description. 
 const varmrøgetProdukter = sortedData.filter(
   (produkt) => produkt.description === "Varmrøget"
@@ -32,6 +29,8 @@ const varmrøgetProdukter = sortedData.filter(
 const koldrøgetProdukter = sortedData.filter(
   (produkt) => produkt.description === "Koldrøget"
 );
+// Sorterer dataen alfabetisk efter name
+const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <!-- Vores wrapper alt vores indhold. Den indeholder header og footer -->
@@ -48,7 +47,7 @@ const koldrøgetProdukter = sortedData.filter(
     <ul class="produkt-grid">
       <!-- Mapper over listen af produkter og render et card for hvert produkt indefor kategorien  -->
       {
-        varmrøgetProdukter.map((produkt) => {
+        varmrøgetProdukter.map((produkt) => { //varmrøgetProdukter er vores array
           return <ProductCard data={produkt} />; // sender det enkelte card-data videre. 
         })
       }
