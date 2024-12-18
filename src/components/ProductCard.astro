@@ -1,72 +1,73 @@
 ---
-// Henter data objekt gennem props 
+// Henter data objekt gennem props
 const { data } = Astro.props;
-
 ---
+
 <!-- Hele cardet er wrapped i et link, som linker til [slug].astro - singleview -->
 <a href={`/produkter/${data.slug}`}>
-  <article class="content">
-    <!-- Dynamisk billede sti -->
-    <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
-    <img src={`/img/${data.image}`} alt={data.image} />
-    <div class="card-content">
-      <h2 class="name">{data.name}</h2>
-      <div class="name-price">
-        <p class="price">{data.pris} DKK</p>
-        <p class="price">{data.kg}</p>
+  <section class="center-content">
+    <article class="content">
+      <!-- Dynamisk billede sti -->
+      <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
+      <img src={`/img/${data.image}`} alt={data.image} />
+      <div class="card-content">
+        <h2 class="name">{data.name}</h2>
+        <div class="name-price">
+          <p class="price">{data.pris} DKK</p>
+          <p class="price">{data.kg}</p>
+        </div>
+        <p class="description">{data.description}</p>
+        <div class="btn-content">
+          <button>Læs mere</button>
+        </div>
       </div>
-      <p class="description">{data.description}</p>
-      <div class="btn-content">
-        <button>Læs mere</button>
-      </div>
-    </div>
-  </article>
+    </article>
+  </section>
 </a>
 
 <style>
   * {
-    background-color: #ffffff;;
+    background-color: #ffffff;
     color: black;
     text-decoration: none;
   }
 
-  a {
-    background-color: #ebe7dc;
-  }
+  .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ebe7dc;
+      
+    }
+
 
   article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 10%;
-    margin-bottom: 4%;
-    margin-top: 4%;
-    max-width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
+    margin-top: 10%;
+    max-width: 85%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-  
   }
 
   img {
     width: 100%;
     object-fit: cover;
-    display: block;
+    
   }
 
   .card-content {
     padding: 16px;
     text-align: left;
-    
   }
 
   .name-price {
-  display: flex;
-  justify-content: left; 
-  align-items: center; 
-  margin-bottom: 12px;
-}
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 12px;
+  }
   .name {
     font-size: 1.8rem;
     font-weight: 600;
@@ -79,7 +80,7 @@ const { data } = Astro.props;
     font-weight: bold;
     margin-bottom: 12px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     margin-right: 4%;
   }
@@ -95,7 +96,7 @@ const { data } = Astro.props;
     color: #fff;
     font-family: "EB Garamond", serif;
     padding: 2% 30%;
-    margin-top: 8%;
+    
     border-radius: 2px;
     font-size: 1.5rem;
     font-weight: regular;
@@ -110,51 +111,52 @@ const { data } = Astro.props;
   .btn-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center
+    
   }
 
-  @media (max-width: 950px) {
-    .name-price {
-  display: flex;
-  justify-content: left; 
-  align-items: center; 
-  margin-bottom: 12px;
-}
-  .name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-    margin-bottom: 8px;
-  }
-
-  .price {
-    font-size: .8rem;
-  
-  }
-
-  button {
-    font-size: 1rem
-  }
-}
-
-@media (max-width: 700px) {
-  article {
-    margin-left: 11%;
-    margin-bottom: 4%;
-    margin-top: 4%;
-    max-width: 70%;
-    height: auto;
-    border-radius: 12px;
-    overflow: hidden;
+  @media (max-width: 1200px) {
+    article {
+ 
+    max-width: 75%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-  
   }
-  img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-  }
-}
-</style>
+    .name-price {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 8px;
+    }
 
+    .price {
+      font-size: 0.8rem;
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    article {
+    
+      overflow: hidden;
+      max-width: 65%;
+     
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+   
+  }
+</style>
