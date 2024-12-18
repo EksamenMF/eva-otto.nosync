@@ -13,7 +13,7 @@ const data = await fetch(
 ).then((res) => res.json());
 
 // Sorterer data alfabetisk og tager de første 3 produkter
-const treProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 6);
+const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 6);
 
 ---
 
@@ -26,7 +26,7 @@ const treProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 
   <ul>
     <section class="product-section">
       <div class="product-grid">
-        {treProdukter.map((produkt) => (
+        {seksProdukter.map((produkt) => (
           <ProductCard data={produkt} />
         ))}
       </div>
