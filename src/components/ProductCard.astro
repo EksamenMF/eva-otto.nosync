@@ -42,7 +42,6 @@ const { data } = Astro.props;
     margin-bottom: 4%;
     margin-top: 4%;
     max-width: 100%;
-    border: 2px solid #ebe7dc;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -114,13 +113,45 @@ const { data } = Astro.props;
     justify-content: center;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1200px) {
+    .name-price {
+  display: flex;
+  justify-content: left; 
+  align-items: center; 
+  margin-bottom: 12px;
+}
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    font-size: .8rem;
+  
+  }
+
   button {
     font-size: 1rem
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 8000px) {
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    max-width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "EB Garamond", serif;
+    
+  }
  
 }
 </style>
