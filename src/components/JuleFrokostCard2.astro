@@ -4,10 +4,7 @@ const { src, alt, titel, items } = Astro.props;
 ---
 
 <article class="grid">
-  <section>
-    <img src={src} alt={alt} />
-  </section>
-  <section>
+  <section class="text-section">
     <div class="titelboks">
       <span class="linje left"></span>
       <span class="titel">{titel}</span>
@@ -17,6 +14,9 @@ const { src, alt, titel, items } = Astro.props;
       {items.map((item: string) => <li>{item}</li>)}
     </ul>
     <AboutButton text="BESTIL" />
+  </section>
+  <section class="image-section">
+    <img src={src} alt={alt} />
   </section>
 </article>
 
@@ -35,7 +35,15 @@ const { src, alt, titel, items } = Astro.props;
     padding: 10px;
   }
 
-  img {
+  .text-section {
+    order: 1;
+  }
+
+  .image-section {
+    order: 2;
+  }
+
+  .image-section img {
     width: 100%;
     max-width: 450px;
     height: auto;
@@ -108,11 +116,25 @@ const { src, alt, titel, items } = Astro.props;
   @media screen and (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 15px;
+      margin-left: 0;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
     }
 
     .titel {
       font-size: 40px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
     }
 
     .titelboks {
@@ -124,24 +146,19 @@ const { src, alt, titel, items } = Astro.props;
       display: none;
     }
 
-    img {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
-      margin: 0 auto;
-    }
-
     ul li {
       font-size: 16px;
     }
   }
+
   @media screen and (max-width: 480px) {
     .grid {
       grid-template-columns: 1fr;
-      gap: 15px;
+      gap: 10px;
+      margin-left: 0;
+      padding: 5px;
+      align-items: center;
+      justify-content: center;
     }
 
     .titel {

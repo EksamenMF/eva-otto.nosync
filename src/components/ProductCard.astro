@@ -1,19 +1,23 @@
 ---
+// Henter data objekt gennem props 
 const { data } = Astro.props;
-const {soldOut} = Astro.props;
----
 
-<a href={`produkter/${data.slug}`}>
-  <article>
-    <img src={data.image} alt={data.image} />
+---
+<!-- Hele cardet er wrapped i et link, som linker til [slug].astro - singleview -->
+<a href={`/produkter/${data.slug}`}>
+  <article class="content">
+    <!-- Dynamisk billede sti -->
+    <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
+    <img src={`/img/${data.image}`} alt={data.image} />
     <div class="card-content">
+      <h2 class="name">{data.name}</h2>
       <div class="name-price">
-        <h2 class="name">{data.name}</h2>
         <p class="price">{data.pris} DKK</p>
+        <p class="price">{data.kg}</p>
       </div>
       <p class="description">{data.description}</p>
       <div class="btn-content">
-        <button>Tilføj til kurv</button>
+        <button>Læs mere</button>
       </div>
     </div>
   </article>
@@ -21,7 +25,7 @@ const {soldOut} = Astro.props;
 
 <style>
   * {
-    background-color: #ffffff;
+    background-color: #ffffff;;
     color: #656255;
     text-decoration: none;
   }
@@ -34,17 +38,15 @@ const {soldOut} = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-right: 10%;
     margin-bottom: 4%;
     margin-top: 4%;
     max-width: 100%;
-    border: 2px solid #ebe7dc;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "EB Garamond", serif;
-    background-color: #ebe7dc;
+    
   }
 
   img {
@@ -56,11 +58,12 @@ const {soldOut} = Astro.props;
   .card-content {
     padding: 16px;
     text-align: left;
+    
   }
 
   .name-price {
   display: flex;
-  justify-content: space-between; 
+  justify-content: left; 
   align-items: center; 
   margin-bottom: 12px;
 }
@@ -78,6 +81,7 @@ const {soldOut} = Astro.props;
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    margin-right: 4%;
   }
   .description {
     font-size: 1rem;
@@ -99,7 +103,8 @@ const {soldOut} = Astro.props;
   }
 
   button:hover {
-    background-color: #002a80;
+    background-color: #ebe7dc;
+    color: #19437d;
   }
 
   .btn-content {
@@ -108,13 +113,46 @@ const {soldOut} = Astro.props;
     justify-content: center;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1200px) {
+    .name-price {
+  display: flex;
+  justify-content: left; 
+  align-items: center; 
+  margin-bottom: 12px;
+}
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    font-size: .8rem;
+  
+  }
+
   button {
     font-size: 1rem
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 8000px) {
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    max-width: 50%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "EB Garamond", serif;
+    
+  }
  
 }
 </style>
+
