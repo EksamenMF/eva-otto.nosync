@@ -33,23 +33,23 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <script>
       console.log("Script running");
+      /* Finder elementet med klassen .days (listen, hvor dagene vises). */
+      /*  Finder elementet med klassen .current-date (overskriften med måned og år). */
+      /* Finder begge <span>-elementer med klassen .icons, som bruges til at gå til forrige/næste måned. */
 
-      const daysTag = document.querySelector(
-        ".days"
-      ) as HTMLElement | null; /* Finder elementet med klassen .days (listen, hvor dagene vises). */
+      const daysTag = document.querySelector(".days") as HTMLElement | null;
       const currentDate = document.querySelector(
         ".current-date"
-      ) as HTMLElement | null; /*  Finder elementet med klassen .current-date (overskriften med måned og år). */
-      const prevNextIcon =
-        document.querySelectorAll(
-          ".icons span"
-        ); /* Finder begge <span>-elementer med klassen .icons, som bruges til at gå til forrige/næste måned. */
+      ) as HTMLElement | null;
+      const prevNextIcon = document.querySelectorAll(".icons span");
 
-      let date = new Date() /*  Starter med dagens dato (new Date()). */,
-        currYear =
-          date.getFullYear() /* Gemmer det aktuelle år (f.eks. 2024). */,
-        currMonth =
-          date.getMonth(); /* Gemmer den aktuelle måned som et tal (f.eks. januar = 0, december = 11). */
+      /*  Starter med dagens dato (new Date()). */
+      /* Gemmer det aktuelle år (f.eks. 2024). */
+      /* Gemmer den aktuelle måned som et tal (f.eks. januar = 0, december = 11). */
+
+      let date = new Date(),
+        currYear = date.getFullYear(),
+        currMonth = date.getMonth();
 
       /* En liste over alle månedsnavne, så vi kan vise dem i stedet for kun tal. */
       const months = [
