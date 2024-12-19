@@ -218,6 +218,94 @@ console.log(data);
     }
 
     /* Responsivt design */
+
+    @media (max-width: 1400px) {
+      .thumbnails {
+    display: none;
+  }
+      .product-card {
+    max-width: 80%; 
+    margin: 5% auto; 
+    padding: 20px; 
+    
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .product-images {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+
+  .main-image img {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    object-fit: cover;
+    border-radius: 5px; 
+  }
+
+  .product-info {
+    width: 70%; 
+    text-align: center; 
+    margin: 0 auto; 
+    padding: 10px; 
+  }
+
+  .product-info h2 {
+    font-size: 1.5rem; 
+    margin-bottom: 10px;
+  }
+
+  .name-price {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 15px;
+  }
+
+  .price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .buy-section {
+    display: flex;
+    flex-direction: column; /* Gør knapperne vertikale */
+    align-items: center;
+    gap: 10px; /* Giv lidt afstand mellem elementerne */
+  }
+
+  .quantity button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .basket {
+    padding: 10px 30px;
+    background-color: #19437d;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .basket:hover {
+    background-color: #ebe7dc;
+    color: #19437d;
+  }
+
+    }
     @media (max-width: 800px) {
           .thumbnails img {
         display: none;
@@ -226,7 +314,6 @@ console.log(data);
       .product-card {
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #ebe7dc;
     max-width: 85%;
     margin: 10% auto;
@@ -299,7 +386,7 @@ console.log(data);
     background-color: #19437d;
     color: #fff;
     font-family: "EB Garamond", serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 2px;
     transition: background-color 0.3s ease;
   }
