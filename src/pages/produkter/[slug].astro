@@ -220,6 +220,19 @@ console.log(data);
     /* Responsivt design */
 
     @media (max-width: 1400px) {
+      .linje {
+      max-width: 100px;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
+    .titel {
+      font-size: 35px;
+      
+    }
       .thumbnails {
     display: none;
   }
@@ -227,7 +240,6 @@ console.log(data);
     max-width: 80%; 
     margin: 5% auto; 
     padding: 20px; 
-    
     flex-direction: column; 
     align-items: center; 
   }
@@ -250,24 +262,24 @@ console.log(data);
 
   .product-info {
     width: 70%; 
-    text-align: center; 
+    text-align: left; 
     margin: 0 auto; 
     padding: 10px; 
   }
 
   .product-info h2 {
-    font-size: 1.5rem; 
+    font-size: 1.8rem; 
     margin-bottom: 10px;
   }
 
   .name-price {
     display: flex;
-    justify-content: center; 
+    justify-content: left; 
     margin-bottom: 15px;
   }
 
   .price {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-right: 10px;
   }
@@ -280,9 +292,9 @@ console.log(data);
 
   .buy-section {
     display: flex;
-    flex-direction: column; /* Gør knapperne vertikale */
+    flex-direction: column; 
     align-items: center;
-    gap: 10px; /* Giv lidt afstand mellem elementerne */
+    gap: 10px; 
   }
 
   .quantity button {
@@ -292,12 +304,14 @@ console.log(data);
   }
 
   .basket {
-    padding: 10px 30px;
+    padding: 2% 30%;
     background-color: #19437d;
+    margin-top: 2%;
+    margin-bottom: 2%;
     color: #fff;
-    border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    font-family: "EB Garamond", sans-serif;
   }
 
   .basket:hover {
@@ -307,6 +321,29 @@ console.log(data);
 
     }
     @media (max-width: 800px) {
+      .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+    
+    .linje {
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
+    .titel {
+      font-size: 25px;
+      
+    }
+
+    .titelboks {
+    height: 15vh;
+  }
           .thumbnails img {
         display: none;
       }
@@ -349,7 +386,7 @@ console.log(data);
   }
 
   .product-info h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 0;
     margin-bottom: 8px;
@@ -363,14 +400,14 @@ console.log(data);
   }
 
   .price {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: bold;
     margin-bottom: 12px;
     margin-right: 4%;
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 0.6rem;
     margin-bottom: 16px;
     opacity: 80%;
   }
