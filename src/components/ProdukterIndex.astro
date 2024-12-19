@@ -138,8 +138,17 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
       font-size: 15px;
     }
 
+    .linje {
+      display: none;
+    }
+
+    .left::before,
+    .right::after {
+      font-size: 15px;
+    }
+
     .titel {
-      font-size: 30px;
+      font-size: 25px;
       
     }
 
@@ -162,7 +171,7 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
       gap: 20px;
     }
     
-
+  
     .titelboks {
     height: 10vh;
    
