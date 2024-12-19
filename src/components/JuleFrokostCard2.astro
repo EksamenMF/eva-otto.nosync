@@ -13,7 +13,7 @@ const { src, alt, titel, items } = Astro.props;
     <ul>
       {items.map((item: string) => <li>{item}</li>)}
     </ul>
-    <AboutButton text="BESTIL" />
+    <AboutButton text="Bestil" />
   </section>
   <section class="image-section">
     <img src={src} alt={alt} />
@@ -25,6 +25,7 @@ const { src, alt, titel, items } = Astro.props;
   @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
   .grid {
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;

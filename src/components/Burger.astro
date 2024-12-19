@@ -5,17 +5,10 @@
 <body>
   <header>
     <div class="logo">
-      <a href="/"><img src="/img/logo_eva.webp" alt="" /></a>
+      <a href="/"><img src="/img/logo_eva.webp" alt="logo" /></a>
     </div>
     <div class="button-container">
-      <a href="/basket"
-        ><button class="burger-basket"
-          ><img
-            src="https://img.icons8.com/?size=100&id=0DBkCUANmgoQ&format=png&color=000000"
-            alt=""
-          /></button
-        ></a
-      >
+      <a href="/basket"><button class="burger-basket"><img src="https://img.icons8.com/?size=100&id=0DBkCUANmgoQ&format=png&color=000000" alt="" /></button></a>
       <button class="burger-menu" id="burgerMenu">
         <span></span>
         <span></span>
@@ -81,7 +74,6 @@
   }
 
   .burger-basket {
-    
     align-items: center;
     justify-content: center;
     width: 45px;
@@ -128,7 +120,7 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 2;
   }
 
   .overlay.hidden {
@@ -142,7 +134,7 @@
     top: 70px;
     right: 0;
     width: 30%;
-    z-index: 1;
+    z-index: 3;
   }
 
   img {
@@ -194,23 +186,21 @@
     }
 
     .button-container {
-    margin-top: 1%;
-  }
+      margin-top: 1%;
+    }
     .burger-basket,
-  .burger-menu {
-    width: 35px;
-    height: 35px;
-  }
+    .burger-menu {
+      width: 35px;
+      height: 35px;
+    }
 
-  .burger-basket img {
-    max-width: 110%; 
-    height: auto;
-    
-  }
+    .burger-basket img {
+      max-width: 110%;
+      height: auto;
+    }
 
-  .burger-menu span {
-    height: 2px; 
-  }
-}
+    .burger-menu span {
+      height: 2px;
+    }
   }
 </style>

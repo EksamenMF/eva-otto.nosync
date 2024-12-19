@@ -2,19 +2,16 @@
 //@ts-nocheck
 import ProductCard from "./ProductCard.astro";
 
-const data = await fetch(
-  "https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter",
-  {
-    method: "GET",
-    headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://wnkjsxgrwbocyrqdebfj.supabase.co/rest/v1/produkter", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indua2pzeGdyd2JvY3lycWRlYmZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM3NzcsImV4cCI6MjA0OTMxOTc3N30.-JwL6KZXBey-gpbEkjNewRBPoUYM7hSEnRYeXgqpHHU",
+  },
+}).then((res) => res.json());
 
 // Sorterer data alfabetisk og tager de første 3 produkter
 const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 6);
-
 ---
 
 <div>
@@ -26,16 +23,12 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
   <ul>
     <section class="product-section">
       <div class="product-grid">
-        {seksProdukter.map((produkt) => (
-          <ProductCard data={produkt} />
-        ))}
+        {seksProdukter.map((produkt) => <ProductCard data={produkt} />)}
       </div>
     </section>
   </ul>
   <div class="button-container">
-    
-      <a href="../productlist"><button>Se alle produkter</button></a>
-    
+    <a href="../productlist"><button>Se alle produkter</button></a>
   </div>
 </div>
 
@@ -82,15 +75,13 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
     font-size: 50px;
     color: #ebe7dc;
     letter-spacing: 1px;
-    
   }
 
   .product-section {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
-  
   }
 
   .product-grid {
@@ -120,14 +111,19 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
     cursor: pointer;
   }
 
-  @media (max-width: 1200px) {
+  .button-container button:hover {
+    background-color: rgba(235, 231, 220, 1);
+    color: rgba(25, 67, 125, 1);
+    border: 2px solid rgba(25, 67, 125, 1);
+  }
 
+  @media (max-width: 1200px) {
     .product-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 50px;
     }
-    
+
     .linje {
       width: 100px;
       background-color: rgba(101, 98, 85, 1);
@@ -149,20 +145,14 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
 
     .titel {
       font-size: 25px;
-      
     }
 
     .titelboks {
-    height: 15vh;
-  }
-
- 
-
-  
+      height: 15vh;
+    }
   }
 
   @media (max-width: 700px) {
-
     .product-section {
       padding-left: 0;
     }
@@ -170,12 +160,9 @@ const seksProdukter = data.sort((a, b) => a.name.localeCompare(b.name)).slice(0,
       grid-template-columns: 1fr;
       gap: 20px;
     }
-    
-  
+
     .titelboks {
-    height: 10vh;
-   
-  
-  }
+      height: 10vh;
+    }
   }
 </style>
