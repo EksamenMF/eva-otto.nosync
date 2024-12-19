@@ -1,0 +1,21 @@
+---
+/* const header = Astro.props.header;
+const text = Astro.props.text;
+ */
+
+ const {header, soldOut} = Astro.props;
+---
+
+<article class="card">
+  <h2>{header}</h2>
+  {soldOut && <p>UDSOLGT!</p>} 
+  <p></p>
+  <slot />
+</article>
+
+<style>
+p {
+  color: black;
+}
+
+</style>
