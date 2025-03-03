@@ -6,12 +6,25 @@ import AboutIndex from "../components/AboutIndex.astro";
 import ProdukterIndex from "../components/ProdukterIndex.astro";
 import ProductCard from "../components/ProductCard.astro";
 import Slider from "../components/Slider.astro";
+import EventIndex from "../components/EventIndex.astro";
+import EventIndex2 from "../components/EventIndex2.astro";
+import EventIndex3 from "../components/EventIndex3.astro";
 ---
 
 <Layout>
   <Hero class="hero" />
   <AboutIndex />
-  <ProdukterIndex />
+  <h2 class="titelboks">
+    <span class="linje left"></span>
+    <span class="titel">CATERING & MAD</span>
+    <span class="linje right"></span>
+  </h2>
+  <div class="event-cards">
+    <EventIndex />
+    <EventIndex2 />
+    <EventIndex3 />
+  </div>
+
   <Slider />
 </Layout>
 
@@ -20,5 +33,54 @@ import Slider from "../components/Slider.astro";
     z-index: 100;
   }
 
+  .event-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+  }
 
+  .titelboks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    margin: 8% 3% 0 3%;
+    background-color: #19437d;
+    height: 20vh;
+  }
+
+  .linje {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 2px;
+    background-color: #ebe7dc;
+  }
+
+  .left::before,
+  .right::after {
+    content: "•";
+    position: absolute;
+    font-size: 25px;
+    color: #ebe7dc;
+  }
+
+  .left::before {
+    left: -5px;
+  }
+
+  .right::after {
+    right: -5px;
+  }
+
+  .titel {
+    font-family: "Bungee Inline", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: #ebe7dc;
+    letter-spacing: 1px;
+  }
 </style>

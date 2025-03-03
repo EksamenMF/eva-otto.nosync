@@ -1,0 +1,113 @@
+---
+
+---
+<section class="center-content">
+  <article class="content">
+    <!-- Dynamisk billede sti -->
+    <!--  Fortsat under hentes vores data dynamisk gennem vores API (supabase) -->
+    <img src="../img/dagensret.webp" alt="Eva & Otto" />
+    <div class="card-content">
+      <h2 class="name">Dagens ret</h2>
+      <div class="name-price">
+        <p class="price">480 DKK</p>
+        <p class="price">pr. person</p>
+      </div>
+      <p class="description">Mandag til torsdag kan du få dagens ret</p>
+      <div class="btn-content">
+        <button>Læs mere</button>
+      </div>
+    </div>
+  </article>
+</section>
+
+
+<style>
+* {
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebe7dc;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10%;
+  margin-left: 70px;
+  max-width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "EB Garamond", serif;
+  
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+  text-align: left;
+}
+
+.name-price {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 4%;
+}
+.description {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  opacity: 80%;
+}
+
+button {
+  display: flex;
+  background-color: #19437d;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  padding: 2% 30%;
+
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: regular;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ebe7dc;
+  color: #19437d;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
